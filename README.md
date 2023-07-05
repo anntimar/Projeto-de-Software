@@ -1,6 +1,6 @@
 # FishNet
 
-Projeto Python da disciplina Projeto de Software
+Projeto Python da disciplina Projeto de Software.
 Integrantes: Leila Maria, Maria Antonia, Julia Azevedo, Thiago Laurentino 
 Descrição do Projeto: Criação de uma rede social baseada no Twitter com o tema de peixes chamada FishNet.
 
