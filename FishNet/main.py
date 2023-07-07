@@ -19,7 +19,7 @@ def newAccount(aName, aPassword,aEmail):
     accountDict[aEmail] = newAccountDict
 
 def clean_terminal():
-    print("\n" * os.get_terminal_size().lines)
+    os.system('cls') or None
 
 def questionarioPersonalidade():
 
@@ -81,22 +81,32 @@ def questionarioPersonalidade():
         tipo_de_peixe = 'Arco-íris'
 
     return tipo_de_peixe 
-
+clean_terminal()
+time.sleep(1)
 while True:
 # ----------------------------------------------------------------
-    clean_terminal()
-    print('PRESSIONE L PARA INICIAR O LOGIN')
-    print('PRESSIONE C PARA OBTER UMA CONTA')
-    print('PRESSIONE Q PARA SAIR')
+    print(f'{Fore.CYAN}  __  _       _          __        _    {Style.RESET_ALL}')
+    print(f'{Fore.CYAN} / _|(_) ___ | |__    /\ \ \  ___ | |_  {Style.RESET_ALL}')
+    print(f'{Fore.CYAN}| |_ | |/ __||  _ \  /  \/ / / _ \| __| {Style.RESET_ALL}')
+    print(f'{Fore.CYAN}|  _|| |\__ \| | | |/ /\  / |  __/| |_  {Style.RESET_ALL}')
+    print(f'{Fore.CYAN}|_|  |_||___/|_| |_|\_\ \/   \___| \__| {Style.RESET_ALL}')
+    print(f'{Fore.YELLOW}     𓆞       𓆟       𓆛      𓆜      𓆝   {Style.RESET_ALL}')
+    print(f'{Fore.YELLOW} 𓆜       𓆜       𓆟      𓆝      𓆛      𓆟{Style.RESET_ALL}')
     print()
-    action = input('ESCOLHA UMA OPÇÃO:')
+
+ 
+    print(f'{Fore.YELLOW} ➀ {Fore.CYAN}LOGIN{Style.RESET_ALL}')
+    print(f'{Fore.YELLOW} ➁ {Fore.CYAN}CRIAR CONTA{Style.RESET_ALL}')
+    print(f'{Fore.YELLOW} ➂ {Fore.CYAN}SAIR{Style.RESET_ALL}')
+    print('')
+    action = input(f'{Fore.CYAN} ▷ {Style.RESET_ALL}')
     action = action.upper()  # force lowercase
     action = action[0]  # just use first letter
     clean_terminal()
 # ----------------------------------------------------------------
 
 # ----------------------------------------------------------------
-    if action == 'L':
+    if action == '1':
         print('------ LOGIN ------')
 
         userEmail= input('E-MAIL: ')
@@ -109,11 +119,8 @@ while True:
         userPassword = userPassword.lower()
         print('')
 
-        # if(accountDict[userEmail]["e-mail"] == userEmail & accountDict[userEmail]['password'] == userPassword):
-        aux = accountDict[userEmail]
 
-
-        if(aux["e-mail"] == userEmail and aux['password'] == userPassword):
+        if(userEmail in accountDict and accountDict[userEmail]["e-mail"] == userEmail and accountDict[userEmail]['password'] == userPassword):
             print('')
             print(f'{Fore.GREEN}LOGIN REALIZADO COM SUCESSO!{Style.RESET_ALL}')
             print('')
@@ -141,7 +148,7 @@ while True:
 # ----------------------------------------------------------------
 
 # ----------------------------------------------------------------
-    elif action == 'C':
+    elif action == '2':
         print('------ CRIE SUA CONTA ------')
         userName= input('ESCOLHA UM NOME DE USUARIO: ')
         userName = str(userName)
@@ -178,5 +185,8 @@ while True:
         time.sleep(2)
 # ----------------------------------------------------------------
 
+# ----------------------------------------------------------------
+    elif action == '3':
+        break
 # ----------------------------------------------------------------
 
