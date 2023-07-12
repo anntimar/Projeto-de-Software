@@ -76,4 +76,6 @@ def questionarioPersonalidade():
 
     return tipo_de_peixe
 
+    # retomar à funcao
+    
     personality_quiz()
