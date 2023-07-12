@@ -21,51 +21,59 @@ def questionarioPersonalidade():
 
     # Loop para fazer as perguntas
     for pergunta in perguntas:
-        resposta = input(pergunta + " (sim/não): ")
+
+        resposta = input((f"{Fore.CYAN} {pergunta} {Fore.YELLOW} ➀{Fore.CYAN} SIM /{Fore.YELLOW} ➁ {Fore.CYAN}NÃO: {Fore.CYAN} ➤  {Fore.YELLOW}"))
 
         # Verificando se a resposta é válida
-        while resposta.lower() != "sim" and resposta.lower() != "não":
-            print("Por favor, responda com 'sim' ou 'não'.")
-            resposta = input(pergunta + " (sim/não): ")
+        while resposta.lower() != "1" and resposta.lower() != "2":
+            print(f"{Fore.RED} ✖ POR FAVOR, RESPONDA COM '1 PARA SIM' OU '2 PARA NÃO'. {Style.RESET_ALL}")
+            time.sleep(1)
+            resposta = input((f"{Fore.CYAN} {pergunta} {Fore.YELLOW} ➀{Fore.CYAN} SIM /{Fore.YELLOW} ➁ {Fore.CYAN} NÃO: {Fore.CYAN} ➤  {Fore.YELLOW}"))
 
         # Armazenando a resposta na lista
         respostas.append(resposta.lower())
 
     # Avaliando a personalidade baseada nas respostas
-    pontuacao = respostas.count("sim")
+    pontuacao = respostas.count("1")
+
+    clean_terminal()
+
+    result_banner()
 
     print("Resultados do Questionário")
     print("-----------------------------")
     tipo_de_peixe = ""
     if pontuacao >= 9:
         print(
-            "Você é um peixe Colisa, muito popular e com facilidade em fazer novos amigos."
+           f"{Fore.CYAN} VOCÊ É UM PEIXE COLISA, MUITO POPULAR E COM FACILIDADE EM FAZER NOVOS AMIGOS."
         )
         tipo_de_peixe = "Colisa"
     elif pontuacao >= 7:
         print(
-            "Você é um peixe Tetra neon, tem uma personalidade popular porém gosta de ser seletivo com suas amizades."
+           f"{Fore.CYAN} VOCÊ É UM PEIXE TETRA NEON, TEM UMA PERSONALIDADE POPULAR PORÉM GOSTA DE SER SELETIVO COM SUAS AMIZADES."
         )
         tipo_de_peixe = "Tetra neon"
     elif pontuacao >= 5:
         print(
-            "Você é um peixe Coridora, tem um personalidade amigável e bons hábitos de limpeza!"
+            f"{Fore.CYAN} VOCÊ É UM PEIXE CORIDORA, TEM UMA PERSONALIDADE AMIGÁVEL E BONS HÁBITOS DE LIMPEZA."
         )
         tipo_de_peixe = "Coridora"
     elif pontuacao >= 3:
         print(
-            "Você é um peixe Kinguio, tem uma personalidade pacífica e não é bom em fazer amizades."
+            f"{Fore.CYAN} VOCÊ É UM PEIXE KINGUIO, TEM UMA PERSONALIDADE ACÍFICA E NÃO É BOM EM FAZER AMIZADES" 
         )
         tipo_de_peixe = "Kinguio"
     elif pontuacao >= 1:
         print(
-            "Você é um peixe Molinésia, tem uma personalidade intensa e bem territorialista."
+            f"{Fore.CYAN} VOCÊ É UM PEIXE MOLINÉSIA, TEM UMA PERSONALIDADE INTENSA E É BEM TERRITORIALISTA."
         )
         tipo_de_peixe = "Molinésia"
     else:
         print(
-            "Você é um peixe Arco-íris, tem personalidade forte, sociável que valoriza a rotina."
+           f"{Fore.CYAN} VOCÊ É UM PEIXE ARCO-ÍRIS, TEM UMA PERSONALIDADE CALMA E É BOM EM FAZER AMIZADES."
         )
         tipo_de_peixe = "Arco-íris"
 
     return tipo_de_peixe
+
+    personality_quiz()
