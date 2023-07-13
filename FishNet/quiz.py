@@ -88,3 +88,7 @@ def personality_quiz():
         tipo_de_peixe = "Arco-íris"
 
     return tipo_de_peixe
+
+    # retomar à funcao
+
+    personality_quiz()
