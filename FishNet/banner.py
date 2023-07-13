@@ -15,7 +15,6 @@ def main_banner():
     print(f"{Style.RESET_ALL}")
 
 
-
 # Slant
 def login_banner():
     print(f"{Fore.CYAN}   __   ____   _____ ____ _  __")
@@ -30,5 +29,35 @@ def create_account_banner():
     print(f"{Fore.CYAN} / ___// _ \ /  _// _ |  / _ \  / ___// __ \ / |/ //_  __// _ |")
     print(f"{Fore.CYAN}/ /__ /   _/_/ / / __ | / , _/ / /__ / /_/ //    /  / /  / __ |")
     print(f"{Fore.CYAN}\___//_/|_|/___//_/ |_|/_/|_|  \___/ \____//_/|_/  /_/  /_/ |_|")
+
+    print(f"{Style.RESET_ALL}")
+
+
+def personality_quiz_banner():
+    print(f"{Fore.CYAN}    ____    __  __  ____ _____")
+    print(f"{Fore.CYAN}   / __ \  / / / / /  _//__  /")
+    print(f"{Fore.CYAN}  / / / / / / / /  / /    / / ")
+    print(f"{Fore.CYAN} / /_/ / / /_/ / _/ /    / /_")
+    print(f"{Fore.CYAN} \___\_\ \____/ /___/   /____/")
+
+    print(f"{Style.RESET_ALL}")
+
+
+def result_banner():
+    print(
+        f"{Fore.CYAN}     ____   ______ _____  __  __ __   ______ ___     ____   ____  "
+    )
+    print(
+        f"{Fore.CYAN}    / __ \ / ____// ___/ / / / // /  /_  __//   |   / __ \ / __ \ "
+    )
+    print(
+        f"{Fore.CYAN}   / /_/ // __/   \__ \ / / / // /    / /  / /| |  / / / // / / / "
+    )
+    print(
+        f"{Fore.CYAN}  / _ _/ / /___  ___/ // /_/ // /___ / /  / ___ | / /_/ // /_/ / "
+    )
+    print(
+        f"{Fore.CYAN} /_/ |_|/_____/ /____/ \____//_____//_/  /_/  |_|/_____/ \____/ "
+    )
 
     print(f"{Style.RESET_ALL}")

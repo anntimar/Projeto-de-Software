@@ -1,0 +1,30 @@
+{
+    "thiago": {
+        "user": "thiago",
+        "password": "1212",
+        "email": "thiago@gmail.com",
+        "first_login": false,
+        "type_of_fish": "Colisa"
+    },
+    "maria": {
+        "user": "maria",
+        "password": "1212",
+        "email": "maria@gmail.com",
+        "first_login": true,
+        "type_of_fish": ""
+    },
+    "leila": {
+        "user": "leila",
+        "password": "1212",
+        "email": "leila@gmail.com",
+        "first_login": true,
+        "type_of_fish": ""
+    },
+    "julia": {
+        "user": "julia",
+        "password": "1212",
+        "email": "julia@gmail.com",
+        "first_login": true,
+        "type_of_fish": ""
+    }
+}
