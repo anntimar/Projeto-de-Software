@@ -26,12 +26,5 @@
         "email": "julia@gmail.com",
         "first_login": true,
         "type_of_fish": ""
-    },
-    "bauduino": {
-        "user": "bauduino",
-        "password": "1212",
-        "email": "bauduino@gmail.com",
-        "first_login": true,
-        "type_of_fish": ""
     }
 }

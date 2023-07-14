@@ -29,66 +29,85 @@ def personality_quiz():
 
     # Loop para fazer as perguntas
     for pergunta in perguntas:
-        resposta = input(
-            (
-                f"{Fore.CYAN} {pergunta} {Fore.YELLOW} ➀{Fore.CYAN} SIM /{Fore.YELLOW} ➁ {Fore.CYAN}NÃO: {Fore.CYAN} ➤  {Fore.YELLOW}"
-            )
-        )
-
-        # Verificando se a resposta é válida
-        while resposta.lower() != "1" and resposta.lower() != "2":
-            print(
-                f"{Fore.RED} ✖ POR FAVOR, RESPONDA COM '1 PARA SIM' OU '2 PARA NÃO'. {Style.RESET_ALL}"
-            )
-            time.sleep(1)
+        resposta = ""
+        while True:
             resposta = input(
-                (
-                    f"{Fore.CYAN} {pergunta} {Fore.YELLOW} ➀{Fore.CYAN} SIM / {Fore.YELLOW}➁{Fore.CYAN} NÃO: {Fore.CYAN} ➤   {Fore.YELLOW}"
+                f"{Fore.CYAN} {pergunta} {Fore.YELLOW} ➀{Fore.CYAN} SIM /{Fore.YELLOW} ➁ {Fore.CYAN}NÃO: {Fore.CYAN} ➤  {Fore.YELLOW}"
+            ).lower()
+
+            if resposta != "1" and resposta != "2":
+                print(
+                    f"{Fore.RED} ✖ POR FAVOR, RESPONDA COM '1 PARA SIM' OU '2 PARA NÃO'. {Style.RESET_ALL}"
                 )
-            )
+                time.sleep(1)
+            else:
+                break
 
         # Armazenando a resposta na lista
-        respostas.append(resposta.lower())
-
-    # Avaliando a personalidade baseada nas respostas
-    pontuacao = respostas.count("1")
+        respostas.append(int(resposta))
 
     clean_terminal()
 
-    result_banner()
+    fishIcon = {
+        "tilápia": "𓆛",
+        "barbela": "𓆜",
+        "salmonete": "𓆝",
+        "peixe focinho de elefante": "𓆞",
+        "Petrocephalus bane": "𓆟",
+        "baiacu": "𓆡",
+    }
+    fishCharacteristics = [
+        "MUITO POPULAR E COM FACILIDADE EM FAZER NOVOS AMIGOS",
+        "TEM UMA PERSONALIDADE POPULAR PORÉM GOSTA DE SER SELETIVO COM SUAS AMIZADES",
+        "TEM UM PERSONALIDADE AMIGÁVEL E BONS HÁBITOS DE LIMPEZA",
+        "TEM UMA PERSONALIDADE PACÍFICA E NÃO É BOM EM FAZER AMIZADES",
+        "TEM UMA PERSONALIDADE INTENSA E BEM TERRITORIALISTA",
+        "",
+    ]
 
-    tipo_de_peixe = ""
-    if pontuacao >= 9:
-        print(
-            f"{Fore.CYAN} VOCÊ É UM PEIXE COLISA, MUITO POPULAR E COM FACILIDADE EM FAZER NOVOS AMIGOS."
-        )
-        tipo_de_peixe = "Colisa"
-    elif pontuacao >= 7:
-        print(
-            f"{Fore.CYAN} VOCÊ É UM PEIXE TETRA NEON, TEM UMA PERSONALIDADE POPULAR PORÉM GOSTA DE SER SELETIVO COM SUAS AMIZADES."
-        )
-        tipo_de_peixe = "Tetra neon"
-    elif pontuacao >= 5:
-        print(
-            f"{Fore.CYAN} VOCÊ É UM PEIXE CORIDORA, TEM UM PERSONALIDADE AMIGÁVEL E BONS HÁBITOS DE LIMPEZA!"
-        )
-        tipo_de_peixe = "Coridora"
-    elif pontuacao >= 3:
-        print(
-            f"{Fore.CYAN} VOCÊ É UM PEIXE KINGUIO, TEM UMA PERSONALIDADE PACÍFICA E NÃO É BOM EM FAZER AMIZADES."
-        )
-        tipo_de_peixe = "Kinguio"
-    elif pontuacao >= 1:
-        print(
-            f"{Fore.CYAN} VOCÊ É UM PEIXE MOLINÉSIA, TEM UMA PERSONALIDADE INTENSA E BEM TERRITORIALISTA."
-        )
-        tipo_de_peixe = "Molinésia"
-    else:
-        print(f"{Fore.CYAN} ")
-        tipo_de_peixe = "Arco-íris"
+    fishProfiles = {
+        "tilápia": [2, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "barbela": [2, 2, 1, 1, 1, 1, 1, 1, 1, 1],
+        "salmonete": [2, 2, 2, 1, 1, 1, 1, 1, 1, 1],
+        "peixe focinho de elefante": [2, 2, 2, 2, 2, 1, 1, 1, 1, 1],
+        "Petrocephalus bane": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        "baiacu": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    }
 
-    return tipo_de_peixe
+    fishNames = [
+        "tilápia",
+        "barbela",
+        "salmonete",
+        "peixe focinho de elefante",
+        "Petrocephalus bane",
+        "baiacu",
+    ]
 
-    # retomar à funcao
+    fishAffinity = [0, 0, 0, 0, 0, 0]
 
-    personality_quiz()
+    for i in range(10):
+        if respostas[i] == fishProfiles["tilápia"][i]:
+            fishAffinity[0] += 1
+        if respostas[i] == fishProfiles["barbela"][i]:
+            fishAffinity[1] += 1
+        if respostas[i] == fishProfiles["salmonete"][i]:
+            fishAffinity[2] += 1
+        if respostas[i] == fishProfiles["peixe focinho de elefante"][i]:
+            fishAffinity[3] += 1
+        if respostas[i] == fishProfiles["Petrocephalus bane"][i]:
+            fishAffinity[4] += 1
+        if respostas[i] == fishProfiles["baiacu"][i]:
+            fishAffinity[5] += 1
+
+    # print(fishAffinity)
+
+    fishIndex = fishAffinity.index(max(fishAffinity))
+
+    print(
+        f"{Fore.CYAN} VOCÊ É UM PEIXE {fishNames[fishIndex]} {Fore.YELLOW}{fishIcon[fishNames[fishIndex]]}{Fore.CYAN} ,{fishCharacteristics[fishIndex]}."
+    )
+
+    return fishNames[fishIndex]
+
+
+# tipo_de_peixe = personality_quiz()
