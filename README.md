@@ -8,5 +8,5 @@ Implementação das funcionalidades realizadas na aula 2 (05/07): Cadastro do us
 
 # modulos
 
-- pip install pwinput
-- pip install colorama
+- py -m pip install pwinput
+- py -m pip install colorama
