@@ -37,8 +37,8 @@ def login():
         print(f"{Fore.GREEN} ✔  LOGIN REALIZADO COM SUCESSO!{Style.RESET_ALL}")
         time.sleep(1)
         if accountsList[userName]["first_login"] == True:
-            personality_quiz()
             accountsList[userName]["type_of_fish"] = personality_quiz()
+            time.sleep(3)
             push_accounts_list(accountsList)
             accountsList
 
