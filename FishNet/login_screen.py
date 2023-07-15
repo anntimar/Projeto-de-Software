@@ -1,3 +1,4 @@
+from profile_screen import profile
 from banner import *
 from accounts_list_actions import *
 from actions import *
@@ -39,27 +40,9 @@ def login():
         if accountsList[userName]["first_login"] == True:
             accountsList[userName]["type_of_fish"] = personality_quiz()
             time.sleep(3)
-            push_accounts_list(accountsList)
-            accountsList
-
             accountsList[userName]["first_login"] = False
-            with open(
-                "FishNet/accountsList.json",
-                "w",
-            ) as file:
-                json.dump(accountsList, file, indent=4)
-        d = 0
-        while d == 0:
-            clean_terminal()
-            print("PRESSIONE Q PARA SAIR")
-            print()
-            action = input("ESCOLHA UMA OPÇÃO:")
-            action = action.lower()
-            action = action[0]
-            clean_terminal()
-            if action == "q":
-                d = 1
-            clean_terminal()
+            push_accounts_list(accountsList)
+        profile(accountsList[userName])
     else:
         print("")
         print(f"{Fore.RED} ✖  USUARIO OU SENHA INCORRETOS!{Style.RESET_ALL}")

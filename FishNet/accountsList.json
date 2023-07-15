@@ -1,17 +1,10 @@
 {
-    "thiago": {
-        "user": "thiago",
-        "password": "1212",
-        "email": "thiago@gmail.com",
-        "first_login": true,
-        "type_of_fish": "Colisa"
-    },
     "maria": {
         "user": "maria",
         "password": "1212",
         "email": "maria@gmail.com",
-        "first_login": true,
-        "type_of_fish": "Colisa"
+        "first_login": false,
+        "type_of_fish": "TIL\u00c1PIA"
     },
     "leila": {
         "user": "leila",
@@ -26,5 +19,12 @@
         "email": "julia@gmail.com",
         "first_login": true,
         "type_of_fish": "til\u00e1pia"
+    },
+    "thiagof": {
+        "user": "thiagof",
+        "password": "1221",
+        "email": "thiago@",
+        "first_login": false,
+        "type_of_fish": "baiacu"
     }
 }

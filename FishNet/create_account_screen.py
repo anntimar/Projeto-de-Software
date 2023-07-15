@@ -49,8 +49,6 @@ def create_account():
         f"{Fore.YELLOW} ➥   {Fore.CYAN}SEU NOME DE USUARIO É ▷  {Fore.YELLOW}{userName}{Style.RESET_ALL}"
     )
 
-    # if userName in accountsList:
-
     print(f"{Style.RESET_ALL}")
 
     key1 = "/"

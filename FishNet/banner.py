@@ -14,6 +14,19 @@ def main_banner():
     print(f"{Style.RESET_ALL}")
 
 
+def profile_banner():
+    Fore.CYAN
+    print(f"{Fore.CYAN}  __  _       _          __        _   ")
+    print(f"{Fore.CYAN} / _|(_) ___ | |__    /\ \ \  ___ | |_ ")
+    print(f"{Fore.CYAN}| |_ | |/ __||  _ \  /  \/ / / _ \| __|")
+    print(f"{Fore.CYAN}|  _|| |\__ \| | | |/ /\  / |  __/| |_ ")
+    print(f"{Fore.CYAN}|_|  |_||___/|_| |_|\_\ \/   \___| \__|")
+    print("")
+    print(f"{Fore.YELLOW}▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀{Style.RESET_ALL}")
+
+
+
+
 # Slant
 def login_banner():
     print(f"{Fore.CYAN}   __   ____   _____ ____ _  __")
