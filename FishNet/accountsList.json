@@ -3,8 +3,8 @@
         "user": "maria",
         "password": "1212",
         "email": "maria@gmail.com",
-        "first_login": false,
-        "type_of_fish": "TIL\u00c1PIA"
+        "first_login": true,
+        "type_of_fish": "Colisa"
     },
     "leila": {
         "user": "leila",
@@ -20,10 +20,10 @@
         "first_login": true,
         "type_of_fish": "til\u00e1pia"
     },
-    "thiagof": {
-        "user": "thiagof",
-        "password": "1221",
-        "email": "thiago@",
+    "thiago": {
+        "user": "thiago",
+        "password": "1212",
+        "email": "thiago@ic.ufal.br",
         "first_login": false,
         "type_of_fish": "baiacu"
     }

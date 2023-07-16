@@ -1,6 +1,7 @@
 from colorama import Fore
 from colorama import Style
 from actions import clean_terminal
+from dic import *
 from banner import *
 
 
@@ -61,6 +62,58 @@ def delete_account_menu():
     return action[0]
 
 
+def feed_menu(post):
+    textSize = 140
+    clean_terminal()
+    typeOfFish = fishIcon[post["type_of_fish"]]
+    userName = post["userName"]
+    bubble = post["bubble"]
+    pops = post["pops"]
+    content = post["content"]
+    textNull = ""
+    barText = ""
+
+    for i in range(textSize):
+        barText = barText + "═"
+    for i in range(textSize - (len(userName) + 1)):
+        userName = userName + " "
+    for i in range((textSize - len(content)) + 3):
+        content = content + " "
+    for i in range(textSize):
+        textNull = textNull + " "
+
+    print(f"{Fore.YELLOW}╔════╦{barText}╗{Style.RESET_ALL}")
+    print(
+        f"{Fore.YELLOW}║ {typeOfFish}  ║{Fore.CYAN}{userName}{Fore.YELLOW}║{Style.RESET_ALL}"
+    )
+    print(f"{Fore.YELLOW}╠════╩{barText}╣{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}║ {Fore.CYAN}{content}{Fore.YELLOW} ║{Style.RESET_ALL}")
+    # print(f"{Fore.YELLOW}║ {Fore.CYAN}{textNull}{Fore.YELLOW} ║{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}╚═════{barText}╝{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ◯  {bubble}   ✴  {pops}{Style.RESET_ALL}")
+    print("")
+    print(f"{Fore.YELLOW} ➀ {Fore.CYAN} ◯  INFLAR BOLHA     {Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➁ {Fore.CYAN} ✴  ESTOURAR BOLHA{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN} ⮜  ANTERIOR      {Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➃ {Fore.CYAN} ⮞  PRÓXIMO     {Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➄ {Fore.CYAN} ⮨  VOLTAR     {Style.RESET_ALL}")
+    print("")
+    action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
+    Style.RESET_ALL
+    action = action.upper()
+    # ⏱
+    return action[0]
+
+
+# post = {
+#     "type_of_fish": "𓆛",
+#     "userName": "thiago_fellype",
+#     "bubble": 5,
+#     "pops": 5,
+#     "content": "Viver é a coisa mais rara do mundo. A maioria das pessoas apenas existe",
+# }
+
+# feed_menu(post)
 # edit_account_menu()  # teste unitario
 # profile_menu()  # teste unitario
 # main_menu()  # teste unitario

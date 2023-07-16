@@ -1,3 +1,4 @@
+from feed_screen import feed
 from edit_account_screen import edit_account
 from accounts_list_actions import *
 from menus import profile_menu
@@ -14,7 +15,7 @@ def profile(perfilUser):
         if action == "1":
             break
         elif action == "2":
-            break
+            feed()
         elif action == "3":
             if not edit_account(perfilUser):
                 return False
