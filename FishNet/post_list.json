@@ -1,37 +1,49 @@
-{   
-  "geral": [
-    {   
-        "type_of_fish": "PEIXE FOCINHO DE ELEFANTE",
-        "userName": "thiago",
-        "bubble": 5,
-        "pops": 5,
-        "content": "Viver e a coisa mais rara do mundo. A maioria das pessoas apenas existe"
-    },    
-    {   
-        "type_of_fish": "SALMONETE",
-        "userName": "maria",
-        "bubble": 5,
-        "pops": 2,
-        "content": "Que os meus sonhos me levem para onde o meu coracao possa ser feliz."
-    },
-    {   
-        "type_of_fish": "BARBELA",
-        "userName": "leila",
-        "bubble": 10,
-        "pops": 3,
-        "content": "O meu maior professor sera sempre o meu maior erro."
-    },
-    {   
-        "type_of_fish": "PETROCEPHALUS BANE",
-        "userName": "julia",
-        "bubble": 4,
-        "pops": 7,
-        "content": "Quando nada e seguro, tudo e possível."
-    }
-
-  ]
+{
+    "ocean": [
+        {
+            "type_of_fish": "PEIXE FOCINHO DE ELEFANTE",
+            "userName": "thiago",
+            "bubbles": [
+                "thiago",
+                "leila"
+            ],
+            "pops": [
+                "maria"
+            ],
+            "content": "Viver e a coisa mais rara do mundo. A maioria das pessoas apenas existe"
+        },
+        {
+            "type_of_fish": "SALMONETE",
+            "userName": "BA",
+            "bubbles": [
+                "maria"
+            ],
+            "pops": [
+                "thiago",
+                "leila"
+            ],
+            "content": "Que os meus sonhos me levem para onde o meu coracao possa ser feliz."
+        },
+        {
+            "type_of_fish": "BARBELA",
+            "userName": "leila",
+            "bubbles": [
+                "maria"
+            ],
+            "pops": [],
+            "content": "O meu maior professor sera sempre o meu maior erro."
+        },
+        {
+            "type_of_fish": "PETROCEPHALUS BANE",
+            "userName": "julia",
+            "bubbles": [
+                "thiago",
+                "maria"
+            ],
+            "pops": [
+                "leila"
+            ],
+            "content": "Quando nada e seguro, tudo e poss\u00c3\u00advel."
+        }
+    ]
 }
-
-
-
-

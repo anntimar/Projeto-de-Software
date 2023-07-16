@@ -67,8 +67,8 @@ def feed_menu(post):
     clean_terminal()
     typeOfFish = fishIcon[post["type_of_fish"]]
     userName = post["userName"]
-    bubble = post["bubble"]
-    pops = post["pops"]
+    bubble = len(post["bubbles"])
+    pops = len(post["pops"])
     content = post["content"]
     textNull = ""
     barText = ""
@@ -88,7 +88,6 @@ def feed_menu(post):
     )
     print(f"{Fore.YELLOW}╠════╩{barText}╣{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}║ {Fore.CYAN}{content}{Fore.YELLOW} ║{Style.RESET_ALL}")
-    # print(f"{Fore.YELLOW}║ {Fore.CYAN}{textNull}{Fore.YELLOW} ║{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}╚═════{barText}╝{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ◯  {bubble}   ✴  {pops}{Style.RESET_ALL}")
     print("")

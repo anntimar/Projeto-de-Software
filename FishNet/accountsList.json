@@ -3,8 +3,8 @@
         "user": "maria",
         "password": "1212",
         "email": "maria@gmail.com",
-        "first_login": true,
-        "type_of_fish": "Colisa"
+        "first_login": false,
+        "type_of_fish": "TIL\u00c1PIA"
     },
     "leila": {
         "user": "leila",

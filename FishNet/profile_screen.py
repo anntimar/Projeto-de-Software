@@ -15,7 +15,7 @@ def profile(perfilUser):
         if action == "1":
             break
         elif action == "2":
-            feed()
+            feed(perfilUser, "ocean")
         elif action == "3":
             if not edit_account(perfilUser):
                 return False
