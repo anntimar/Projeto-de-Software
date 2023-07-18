@@ -104,13 +104,17 @@ def feed_menu(post):
     return action[0]
 
 
-# post = {
-#     "type_of_fish": "𓆛",
-#     "userName": "thiago_fellype",
-#     "bubble": 5,
-#     "pops": 5,
-#     "content": "Viver é a coisa mais rara do mundo. A maioria das pessoas apenas existe",
-# }
+def post_menu():
+    clean_terminal()
+    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}PORTAR NO OCEANO{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}POSTAR EM UM CARDUME{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print("")
+    action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
+    Style.RESET_ALL
+    action = action.upper()
+    return action[0]
+
 
 # feed_menu(post)
 # edit_account_menu()  # teste unitario

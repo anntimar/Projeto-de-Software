@@ -4,11 +4,12 @@
             "type_of_fish": "PEIXE FOCINHO DE ELEFANTE",
             "userName": "thiago",
             "bubbles": [
-                "thiago",
-                "leila"
+                "leila",
+                "paulo_r"
             ],
             "pops": [
-                "maria"
+                "maria",
+                "thiago"
             ],
             "content": "Viver e a coisa mais rara do mundo. A maioria das pessoas apenas existe"
         },
@@ -37,13 +38,20 @@
             "type_of_fish": "PETROCEPHALUS BANE",
             "userName": "julia",
             "bubbles": [
-                "thiago",
                 "maria"
             ],
             "pops": [
-                "leila"
+                "leila",
+                "thiago"
             ],
             "content": "Quando nada e seguro, tudo e poss\u00c3\u00advel."
+        },
+        {
+            "type_of_fish": "BAIACU",
+            "userName": "thiago",
+            "bubbles": [],
+            "pops": [],
+            "content": " a ju \u00e9 minha parceira"
         }
     ]
 }

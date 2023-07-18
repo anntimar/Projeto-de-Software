@@ -26,5 +26,12 @@
         "email": "thiago@ic.ufal.br",
         "first_login": false,
         "type_of_fish": "baiacu"
+    },
+    "paulo_r": {
+        "user": "paulo_r",
+        "password": "1212",
+        "email": "paulo@ic.ufal.br",
+        "first_login": false,
+        "type_of_fish": "SALMONETE"
     }
 }

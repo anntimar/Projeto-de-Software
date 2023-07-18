@@ -1,3 +1,4 @@
+from create_post import createPost
 from feed_screen import feed
 from edit_account_screen import edit_account
 from accounts_list_actions import *
@@ -13,7 +14,7 @@ def profile(perfilUser):
         clean_terminal()
         action = profile_menu()
         if action == "1":
-            break
+            createPost(perfilUser)
         elif action == "2":
             feed(perfilUser, "ocean")
         elif action == "3":
