@@ -26,8 +26,23 @@ def profile_menu():
     print(f"{Fore.YELLOW} ➀ {Fore.CYAN}POSTAR{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ➁ {Fore.CYAN}FEED OCEANO{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ➂ {Fore.CYAN}CARDUMES{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➃ {Fore.CYAN}EDITAR CONTA{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➄ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➃ {Fore.CYAN}PEIXES AMIGOS{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➄ {Fore.CYAN}EDITAR CONTA{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➅ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print("")
+    action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
+    Style.RESET_ALL
+    action = action.upper()
+    return action[0]
+
+
+def following_menu():
+    clean_terminal()
+    profile_banner()
+    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}ADICIONAR PEIXE AMIGO{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}REMOVER PEIXE AMIGO{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}VER LISTA DE PEIXE AMIGOS{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➃ {Fore.CYAN}VOLTAR{Style.RESET_ALL}")
     print("")
     action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
     Style.RESET_ALL

@@ -16,6 +16,7 @@ def new_account(user, password, email):
         "type_of_fish": 0,
         "posts": [],
         "fish_cluters": [],
+        "fish_friends": [],
     }
     accountsList[user] = newAccount
     push_accounts_list(accountsList)
