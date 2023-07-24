@@ -11,8 +11,6 @@ colorama_init()
 clean_terminal()
 while True:
     action = main_menu()
-    clean_terminal()
-
     if action == "1":
         login()
     elif action == "2":

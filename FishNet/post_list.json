@@ -65,21 +65,61 @@
             "content": "teste de post no oceano"
         },
         {
-            "type_of_fish": 2,
-            "userName": "user1",
+            "type_of_fish": 1,
+            "userName": "leila",
             "bubbles": [],
             "pops": [],
-            "content": "teste post user1"
-        },
-        {
-            "type_of_fish": 2,
-            "userName": "user1",
-            "bubbles": [],
-            "pops": [],
-            "content": "teste de poste no perfil"
+            "content": "LO LO LO"
         }
     ],
-    "peixe louco": [],
-    "duda": [],
-    "ilha do peixe": []
+    "peixe azul": [
+        {
+            "type_of_fish": 4,
+            "userName": "thiago",
+            "bubbles": [],
+            "pops": [],
+            "content": " a ju \u00e9 minha parceira"
+        },
+        {
+            "type_of_fish": 4,
+            "userName": "thiago",
+            "bubbles": [
+                "user1"
+            ],
+            "pops": [],
+            "content": "teste de post no oceano"
+        },
+        {
+            "type_of_fish": 3,
+            "userName": "thiago",
+            "bubbles": [
+                "leila"
+            ],
+            "pops": [],
+            "content": "teste de post em cardume"
+        },
+        {
+            "type_of_fish": 1,
+            "userName": "leila",
+            "bubbles": [],
+            "pops": [],
+            "content": "LA LA LA"
+        }
+    ],
+    "peixe dourado": [
+        {
+            "type_of_fish": 3,
+            "userName": "thiago",
+            "bubbles": [],
+            "pops": [],
+            "content": "primeiro post no cardume peixe dourado"
+        },
+        {
+            "type_of_fish": 3,
+            "userName": "thiago",
+            "bubbles": [],
+            "pops": [],
+            "content": "segundo poste no cardume peixe dourado"
+        }
+    ]
 }

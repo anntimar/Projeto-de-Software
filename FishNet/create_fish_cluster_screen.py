@@ -1,6 +1,7 @@
 import time
 from colorama import Fore
 from colorama import Style
+from feed_screen import feed
 from banner import profile_banner
 from menus import *
 from post_list_actions import *
@@ -12,15 +13,14 @@ def fish_cluter_screen(perfilUser):
     while True:
         action = fish_cluster_menu()
         if action == "1":
-            break
+            feed_of_fish_cluters(perfilUser)
         elif action == "2":
             crate_fish_cluster(perfilUser)
         elif action == "3":
             enter_user_in_fish_cluster(perfilUser)
         elif action == "4":
             exit_user_in_fish_cluster(perfilUser)
-        elif action == "7":
-            enter_user_in_fish_cluster(perfilUser)
+        elif action == "5":
             break
 
 
@@ -44,6 +44,7 @@ def crate_fish_cluster(perfilUser):
         else:
             postList[fishClusterName] = []
             accountsList[perfilUser["user"]]["fish_cluters"].append(fishClusterName)
+            push_accounts_list(accountsList)
             push_post_list(postList)
             print(f"{Fore.GREEN} ✔  NOME DE CARDUME DISPONÍVEL!{Style.RESET_ALL}")
             time.sleep(1)
@@ -204,3 +205,33 @@ def exit_user_in_fish_cluster(perfilUser):
                 f"{Fore.RED} ✖  CARDUME NÃO LOCALIZADO, TENTE NOVAMENTE!{Style.RESET_ALL}"
             )
             time.sleep(1)
+
+
+def feed_of_fish_cluters(perfilUser):
+    accountsList = pull_accounts_list()
+    postList = pull_post_list()
+    while True:
+        action = int(feed_of_fish_cluters_menu(perfilUser))
+        if action == 0:
+            return
+
+        if action <= len(accountsList[perfilUser["user"]]["fish_cluters"]):
+            if (
+                len(
+                    postList[
+                        accountsList[perfilUser["user"]]["fish_cluters"][action - 1]
+                    ]
+                )
+                > 0
+            ):
+                feed(
+                    perfilUser,
+                    accountsList[perfilUser["user"]]["fish_cluters"][action - 1],
+                )
+            else:
+                clean_terminal()
+                profile_banner()
+                print(f"{Fore.RED} ✖  NÃO EXISTE POSTS NESSE CARDUME!{Style.RESET_ALL}")
+                time.sleep(2)
+        elif action == len(accountsList[perfilUser["user"]]["fish_cluters"]) + 1:
+            break

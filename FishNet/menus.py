@@ -1,5 +1,7 @@
+import time
 from colorama import Fore
 from colorama import Style
+from accounts_list_actions import pull_accounts_list
 from actions import clean_terminal
 from fish_data import *
 from banner import *
@@ -49,11 +51,11 @@ def create_fish_cluster_menu():
 def fish_cluster_menu():
     clean_terminal()
     profile_banner()
-    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}CARDUMES{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}FEED DOS CARDUMES{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ➁ {Fore.CYAN}CRIAR CARDUME{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ➂ {Fore.CYAN}ENTRAR EM UM CARDUME{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ➃ {Fore.CYAN}SAIR DE UM CARDUME{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➄ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➄ {Fore.CYAN}VOLTAR{Style.RESET_ALL}")
     print("")
     action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
     Style.RESET_ALL
@@ -76,8 +78,63 @@ def edit_account_menu():
     return action[0]
 
 
+def feed_of_fish_cluters_menu(perfilUser):
+    accountsList = pull_accounts_list()
+    numbers = ["", "➀", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉"]
+
+    clean_terminal()
+    profile_banner()
+
+    if len(accountsList[perfilUser["user"]]["fish_cluters"]) == 0:
+        print(f"{Fore.RED} ✖  VOCÊ NÃO ESTÁ EM NEM UM CARDUME!{Style.RESET_ALL}")
+        time.sleep(2)
+    else:
+        j = 0
+        for i in accountsList[perfilUser["user"]]["fish_cluters"]:
+            j += 1
+            print(f"{Fore.YELLOW} {numbers[j]} {Fore.CYAN}{i}{Style.RESET_ALL}")
+
+        j += 1
+        print(f"{Fore.YELLOW} {numbers[j]} {Fore.CYAN}VOLTAR{Style.RESET_ALL}")
+        print("")
+        action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
+        Style.RESET_ALL
+        action = action.upper()
+        return action[0]
+
+    return "0"
+
+
+def post_feed_of_fish_cluters_menu(perfilUser):
+    accountsList = pull_accounts_list()
+    numbers = ["", "➀", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉"]
+
+    clean_terminal()
+    profile_banner()
+
+    if len(accountsList[perfilUser["user"]]["fish_cluters"]) == 0:
+        print(f"{Fore.RED} ✖  VOCÊ NÃO ESTÁ EM NEM UM CARDUME!{Style.RESET_ALL}")
+        time.sleep(2)
+    else:
+        j = 0
+        for i in accountsList[perfilUser["user"]]["fish_cluters"]:
+            j += 1
+            print(f"{Fore.YELLOW} {numbers[j]} {Fore.CYAN}{i}{Style.RESET_ALL}")
+
+        j += 1
+        print(f"{Fore.YELLOW} {numbers[j]} {Fore.CYAN}VOLTAR{Style.RESET_ALL}")
+        print("")
+        action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
+        Style.RESET_ALL
+        action = action.upper()
+        return action[0]
+
+    return "0"
+
+
 def delete_account_menu():
     clean_terminal()
+    profile_banner()
     print(
         f"{Fore.YELLOW} ☹  {Fore.CYAN}TEM CERTEZA QUE DESEJA EXCLUIR A CONTA?{Style.RESET_ALL}"
     )
@@ -135,17 +192,12 @@ def feed_menu(post):
 
 def post_menu():
     clean_terminal()
+    profile_banner()
     print(f"{Fore.YELLOW} ➀ {Fore.CYAN}PORTAR NO OCEANO{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ➁ {Fore.CYAN}POSTAR EM UM CARDUME{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}VOLTAR{Style.RESET_ALL}")
     print("")
     action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
     Style.RESET_ALL
     action = action.upper()
     return action[0]
-
-
-# feed_menu(post)
-# edit_account_menu()  # teste unitario
-# profile_menu()  # teste unitario
-# main_menu()  # teste unitario
