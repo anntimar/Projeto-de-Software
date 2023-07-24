@@ -19,7 +19,7 @@ Implementações posteriores até o dia da apresentação (24/07):
 - Excluir conta
 - Postar no feed geral
 - Controlar qual feed ver (comunidade ou geral)
-- Like nos posts
+- Likes nos posts
 - Deslikes nos posts
 - Seguir usuários
 - Deixar de seguir usuários
