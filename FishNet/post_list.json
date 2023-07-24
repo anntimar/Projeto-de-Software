@@ -1,7 +1,7 @@
 {
     "ocean": [
         {
-            "type_of_fish": "PEIXE FOCINHO DE ELEFANTE",
+            "type_of_fish": 2,
             "userName": "thiago",
             "bubbles": [
                 "leila",
@@ -14,28 +14,30 @@
             "content": "Viver e a coisa mais rara do mundo. A maioria das pessoas apenas existe"
         },
         {
-            "type_of_fish": "SALMONETE",
+            "type_of_fish": 2,
             "userName": "BA",
             "bubbles": [
                 "maria"
             ],
             "pops": [
-                "thiago",
-                "leila"
+                "leila",
+                "thiago"
             ],
             "content": "Que os meus sonhos me levem para onde o meu coracao possa ser feliz."
         },
         {
-            "type_of_fish": "BARBELA",
+            "type_of_fish": 3,
             "userName": "leila",
             "bubbles": [
                 "maria"
             ],
-            "pops": [],
+            "pops": [
+                "user1"
+            ],
             "content": "O meu maior professor sera sempre o meu maior erro."
         },
         {
-            "type_of_fish": "PETROCEPHALUS BANE",
+            "type_of_fish": 3,
             "userName": "julia",
             "bubbles": [
                 "maria"
@@ -47,11 +49,37 @@
             "content": "Quando nada e seguro, tudo e poss\u00c3\u00advel."
         },
         {
-            "type_of_fish": "BAIACU",
+            "type_of_fish": 4,
             "userName": "thiago",
             "bubbles": [],
             "pops": [],
             "content": " a ju \u00e9 minha parceira"
+        },
+        {
+            "type_of_fish": 4,
+            "userName": "thiago",
+            "bubbles": [
+                "user1"
+            ],
+            "pops": [],
+            "content": "teste de post no oceano"
+        },
+        {
+            "type_of_fish": 2,
+            "userName": "user1",
+            "bubbles": [],
+            "pops": [],
+            "content": "teste post user1"
+        },
+        {
+            "type_of_fish": 2,
+            "userName": "user1",
+            "bubbles": [],
+            "pops": [],
+            "content": "teste de poste no perfil"
         }
-    ]
+    ],
+    "peixe louco": [],
+    "duda": [],
+    "ilha do peixe": []
 }

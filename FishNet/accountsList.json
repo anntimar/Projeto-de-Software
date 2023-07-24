@@ -4,34 +4,54 @@
         "password": "1212",
         "email": "maria@gmail.com",
         "first_login": false,
-        "type_of_fish": "TIL\u00c1PIA"
+        "type_of_fish": 1,
+        "posts": [],
+        "fish_cluters": []
     },
     "leila": {
         "user": "leila",
         "password": "1212",
         "email": "leila@gmail.com",
         "first_login": false,
-        "type_of_fish": "barbela"
+        "type_of_fish": 1,
+        "posts": [],
+        "fish_cluters": []
     },
     "julia": {
         "user": "julia",
         "password": "1212",
         "email": "julia@gmail.com",
         "first_login": true,
-        "type_of_fish": "til\u00e1pia"
+        "type_of_fish": 2,
+        "posts": [],
+        "fish_cluters": []
     },
     "thiago": {
         "user": "thiago",
         "password": "1212",
         "email": "thiago@ic.ufal.br",
         "first_login": false,
-        "type_of_fish": "baiacu"
+        "type_of_fish": 3,
+        "posts": [],
+        "fish_cluters": [
+        ]
     },
     "paulo_r": {
         "user": "paulo_r",
         "password": "1212",
         "email": "paulo@ic.ufal.br",
         "first_login": false,
-        "type_of_fish": "SALMONETE"
+        "type_of_fish": 4,
+        "posts": [],
+        "fish_cluters": []
+    },
+    "user1": {
+        "user": "user1",
+        "password": "1",
+        "email": "1",
+        "first_login": false,
+        "type_of_fish": 2,
+        "posts": [],
+        "fish_cluters": []
     }
 }

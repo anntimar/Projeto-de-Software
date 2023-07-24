@@ -3,6 +3,7 @@ from colorama import Style
 from actions import clean_terminal
 import time
 from banner import *
+from fish_data import *
 
 
 def personality_quiz():
@@ -47,55 +48,20 @@ def personality_quiz():
 
     clean_terminal()
 
-    fishIcon = {
-        "TILÁPIA": "𓆛",
-        "BARBELA": "𓆜",
-        "SALMONETE": "𓆝",
-        "PEIXE FOCINHO DE ELEFANTE": "𓆞",
-        "PETROCEPHALUS BANE": "𓆟",
-        "BAIACU": "𓆡",
-    }
-    fishCharacteristics = [
-        "MUITO POPULAR E COM FACILIDADE EM FAZER NOVOS AMIGOS",
-        "TEM UMA PERSONALIDADE POPULAR PORÉM GOSTA DE SER SELETIVO COM SUAS AMIZADES",
-        "TEM UM PERSONALIDADE AMIGÁVEL E BONS HÁBITOS DE LIMPEZA",
-        "TEM UMA PERSONALIDADE PACÍFICA E NÃO É BOM EM FAZER AMIZADES",
-        "TEM UMA PERSONALIDADE INTENSA E BEM TERRITORIALISTA",
-        "TEM UMA PERSONALIDADE PACÍFICA, MAS QUANDO AMEAÇADO, PODE SE TORNAR TERRITORIAL E DEFENSIVO",
-    ]
-
-    fishProfiles = {
-        "TILÁPIA": [1, 1, 2, 2, 1, 2, 1, 2, 1, 1],
-        "BARBELA": [1, 1, 2, 1, 1, 1, 2, 1, 1, 1],
-        "SALMONETE": [1, 1, 1, 1, 1, 1, 2, 1, 1, 1],
-        "PEIXE FOCINHO DE ELEFANTE": [2, 2, 1, 1, 2, 1, 2, 1, 1, 1],
-        "PETROCEPHALUS BANE": [2, 1, 1, 2, 2, 1, 2, 1, 1, 1],
-        "BAIACU": [1, 1, 2, 1, 1, 1, 2, 2, 1, 2],
-    }
-
-    fishNames = [
-        "TILÁPIA",
-        "BARBELA",
-        "SALMONETE",
-        "PEIXE FOCINHO DE ELEFANTE",
-        "PETROCEPHALUS BANE",
-        "BAIACU",
-    ]
-
     fishAffinity = [0, 0, 0, 0, 0, 0]
 
     for i in range(10):
-        if respostas[i] == fishProfiles["TILÁPIA"][i]:
+        if respostas[i] == fishProfiles[0][i]:
             fishAffinity[0] += 1
-        if respostas[i] == fishProfiles["BARBELA"][i]:
+        if respostas[i] == fishProfiles[1][i]:
             fishAffinity[1] += 1
-        if respostas[i] == fishProfiles["SALMONETE"][i]:
+        if respostas[i] == fishProfiles[2][i]:
             fishAffinity[2] += 1
-        if respostas[i] == fishProfiles["PEIXE FOCINHO DE ELEFANTE"][i]:
+        if respostas[i] == fishProfiles[3][i]:
             fishAffinity[3] += 1
-        if respostas[i] == fishProfiles["PETROCEPHALUS BANE"][i]:
+        if respostas[i] == fishProfiles[4][i]:
             fishAffinity[4] += 1
-        if respostas[i] == fishProfiles["BAIACU"][i]:
+        if respostas[i] == fishProfiles[5][i]:
             fishAffinity[5] += 1
 
     # print(fishAffinity)
@@ -103,10 +69,7 @@ def personality_quiz():
     fishIndex = fishAffinity.index(max(fishAffinity))
 
     print(
-        f"{Fore.CYAN} VOCÊ É UM PEIXE {fishNames[fishIndex]} {Fore.YELLOW}{fishIcon[fishNames[fishIndex]]}{Fore.CYAN} , {fishCharacteristics[fishIndex]}."
+        f"{Fore.CYAN} VOCÊ É UM PEIXE {fishNames[fishIndex]} {Fore.YELLOW}{fishIcon[fishIndex]}{Fore.CYAN} , {fishCharacteristics[fishIndex]}."
     )
 
-    return fishNames[fishIndex]
-
-
-# tipo_de_peixe = personality_quiz()
+    return fishIndex

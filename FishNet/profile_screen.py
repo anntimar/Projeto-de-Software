@@ -1,3 +1,4 @@
+from create_fish_cluster_screen import *
 from create_post import createPost
 from feed_screen import feed
 from edit_account_screen import edit_account
@@ -18,8 +19,10 @@ def profile(perfilUser):
         elif action == "2":
             feed(perfilUser, "ocean")
         elif action == "3":
+            fish_cluter_screen(perfilUser)
+        elif action == "4":
             if not edit_account(perfilUser):
                 return False
-        elif action == "4":
+        elif action == "5":
             break
     push_accounts_list(accountsList)

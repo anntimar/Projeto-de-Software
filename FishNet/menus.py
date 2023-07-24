@@ -1,7 +1,7 @@
 from colorama import Fore
 from colorama import Style
 from actions import clean_terminal
-from dic import *
+from fish_data import *
 from banner import *
 
 
@@ -22,9 +22,38 @@ def profile_menu():
     clean_terminal()
     profile_banner()
     print(f"{Fore.YELLOW} ➀ {Fore.CYAN}POSTAR{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}FEED{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}EDITAR CONTA{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➃ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}FEED OCEANO{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}CARDUMES{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➃ {Fore.CYAN}EDITAR CONTA{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➄ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print("")
+    action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
+    Style.RESET_ALL
+    action = action.upper()
+    return action[0]
+
+
+def create_fish_cluster_menu():
+    clean_terminal()
+    profile_banner()
+    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}ADICONAR PEIXE EM UM CARDUME{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}REMOVER PEIXE DE UM CARDUME{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}FINALIZAR{Style.RESET_ALL}")
+    print("")
+    action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
+    Style.RESET_ALL
+    action = action.upper()
+    return action[0]
+
+
+def fish_cluster_menu():
+    clean_terminal()
+    profile_banner()
+    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}CARDUMES{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}CRIAR CARDUME{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}ENTRAR EM UM CARDUME{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➃ {Fore.CYAN}SAIR DE UM CARDUME{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➄ {Fore.CYAN}SAIR{Style.RESET_ALL}")
     print("")
     action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
     Style.RESET_ALL

@@ -5,7 +5,7 @@ def postPull(perfilUser, feedlist, text):
     postList = pull_post_list()
     postList[feedlist].append(
         {
-            "type_of_fish": perfilUser["type_of_fish"].upper(),
+            "type_of_fish": perfilUser["type_of_fish"],
             "userName": perfilUser["user"],
             "bubbles": [],
             "pops": [],
