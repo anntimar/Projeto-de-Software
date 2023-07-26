@@ -7,7 +7,6 @@ from colorama import init as colorama_init
 
 colorama_init()
 
-
 clean_terminal()
 while True:
     action = main_menu()

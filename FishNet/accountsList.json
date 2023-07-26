@@ -8,7 +8,8 @@
         "posts": [],
         "fish_cluters": [
             "peixe azul",
-            "peixe dourado"
+            "peixe dourado",
+            "ilha da alegria"
         ],
         "fish_friends": []
     },
@@ -32,7 +33,9 @@
         "first_login": false,
         "type_of_fish": 2,
         "posts": [],
-        "fish_cluters": [],
+        "fish_cluters": [
+            "ilha da alegria"
+        ],
         "fish_friends": []
     },
     "thiago": {
@@ -49,6 +52,30 @@
         "fish_friends": [
             "maria",
             "julia"
+        ]
+    },
+    "gabriel": {
+        "user": "gabriel",
+        "password": "1212",
+        "email": "gabriel",
+        "first_login": true,
+        "type_of_fish": 0,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
+    },
+    "baldoino": {
+        "user": "baldoino",
+        "password": "1212",
+        "email": "thiago@gmail.com",
+        "first_login": false,
+        "type_of_fish": 5,
+        "posts": [],
+        "fish_cluters": [
+            "ilha da alegria"
+        ],
+        "fish_friends": [
+            "maria"
         ]
     }
 }
