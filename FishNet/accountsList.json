@@ -77,5 +77,15 @@
         "fish_friends": [
             "maria"
         ]
+    },
+    "matheus_t": {
+        "user": "matheus_t",
+        "password": "123",
+        "email": "mathues@edge",
+        "first_login": false,
+        "type_of_fish": 3,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
     }
 }

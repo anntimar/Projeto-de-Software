@@ -69,7 +69,9 @@
             "type_of_fish": 1,
             "userName": "leila",
             "bubbles": [],
-            "pops": [],
+            "pops": [
+                "matheus_t"
+            ],
             "content": "LO LO LO"
         },
         {
