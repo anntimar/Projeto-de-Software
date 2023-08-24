@@ -1,9 +1,10 @@
 from colorama import Fore
 from colorama import Style
+from actions import clean_terminal
 
 
 def main_banner():
-    Fore.CYAN
+    clean_terminal()
     print(f"{Fore.CYAN}  __  _       _          __        _    ")
     print(f"{Fore.CYAN} / _|(_) ___ | |__    /\ \ \  ___ | |_  ")
     print(f"{Fore.CYAN}| |_ | |/ __||  _ \  /  \/ / / _ \| __| ")
@@ -15,7 +16,7 @@ def main_banner():
 
 
 def profile_banner():
-    Fore.CYAN
+    clean_terminal()
     print(f"{Fore.CYAN}  __  _       _          __        _   ")
     print(f"{Fore.CYAN} / _|(_) ___ | |__    /\ \ \  ___ | |_ ")
     print(f"{Fore.CYAN}| |_ | |/ __||  _ \  /  \/ / / _ \| __|")
@@ -25,10 +26,9 @@ def profile_banner():
     print(f"{Fore.YELLOW}▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀{Style.RESET_ALL}")
 
 
-
-
 # Slant
 def login_banner():
+    clean_terminal()
     print(f"{Fore.CYAN}   __   ____   _____ ____ _  __")
     print(f"{Fore.CYAN}  / /  / __ \ / ___//  _// |/ /")
     print(f"{Fore.CYAN} / /__/ /_/ // (_ /_/ / /    / ")
@@ -37,6 +37,7 @@ def login_banner():
 
 
 def create_account_banner():
+    clean_terminal()
     print(f"{Fore.CYAN}  _____ ___   ____ ___    ___    _____ ____   _  __ ______ ___ ")
     print(f"{Fore.CYAN} / ___// _ \ /  _// _ |  / _ \  / ___// __ \ / |/ //_  __// _ |")
     print(f"{Fore.CYAN}/ /__ /   _/_/ / / __ | / , _/ / /__ / /_/ //    /  / /  / __ |")
@@ -46,6 +47,7 @@ def create_account_banner():
 
 
 def personality_quiz_banner():
+    clean_terminal()
     print(f"{Fore.CYAN}    ____    __  __  ____ _____")
     print(f"{Fore.CYAN}   / __ \  / / / / /  _//__  /")
     print(f"{Fore.CYAN}  / / / / / / / /  / /    / / ")
@@ -56,6 +58,7 @@ def personality_quiz_banner():
 
 
 def result_banner():
+    clean_terminal()
     print(
         f"{Fore.CYAN}     ____   ______ _____  __  __ __   ______ ___     ____   ____  "
     )

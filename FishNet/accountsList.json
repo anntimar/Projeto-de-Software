@@ -87,5 +87,35 @@
         "posts": [],
         "fish_cluters": [],
         "fish_friends": []
+    },
+    "lala": {
+        "user": "lala",
+        "password": "1212",
+        "email": "lala@",
+        "first_login": false,
+        "type_of_fish": 2,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
+    },
+    "tata": {
+        "user": "tata",
+        "password": "1212",
+        "email": "1212",
+        "first_login": true,
+        "type_of_fish": 0,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
+    },
+    "fafa": {
+        "user": "fafa",
+        "password": "1212",
+        "email": "1212",
+        "first_login": true,
+        "type_of_fish": 0,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
     }
 }

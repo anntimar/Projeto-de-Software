@@ -1,49 +1,44 @@
-from profile_screen import profile
-from banner import *
-from accounts_list_actions import *
-from actions import *
-from quiz import *
-
 import time
 import pwinput
-
+from classs.postFile import *
+from profile_screen import profile
+from banner import *
+from actions import *
+from quiz import *
 from colorama import Fore
 from colorama import Style
+from classs.account import Account
 
 
 def login():
-    accountsList = pull_accounts_list()
-    clean_terminal()
     login_banner()
 
-    userName = input(f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DE USUARIO ▷  {Fore.YELLOW}")
-    userName = str(userName).lower()
+    user = input(f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DE USÚARIO ▷  {Fore.YELLOW}")
+    user = str(user).lower()
     print(f"{Style.RESET_ALL}")
 
-    userPassword = pwinput.pwinput(
-        f"{Fore.YELLOW} 🔑{Fore.CYAN}  SENHA  ▷  {Fore.YELLOW}"
-    )
-    userPassword = str(userPassword).lower()
+    password = pwinput.pwinput(f"{Fore.YELLOW} 🔑{Fore.CYAN}  SENHA  ▷  {Fore.YELLOW}")
+    password = str(password).lower()
     print(f"{Style.RESET_ALL}")
 
-    clean_terminal()
     login_banner()
-
-    if (
-        userName in accountsList
-        and accountsList[userName]["user"] == userName
-        and accountsList[userName]["password"] == userPassword
-    ):
+    try:
+        account = Account(user)
+        if account.password == password:
+            print("")
+            print(f"{Fore.GREEN} ✔  LOGIN REALIZADO COM SUCESSO!{Style.RESET_ALL}")
+            time.sleep(1)
+            if account.first_login == True:
+                time.sleep(3)
+                account.first_login = False
+                account.type_of_fish = personality_quiz()
+                account.push()
+            profile(account)
+        else:
+            print("")
+            print(f"{Fore.RED} ✖ SENHA INCORRETA!{Style.RESET_ALL}")
+            time.sleep(1)
+    except:
         print("")
-        print(f"{Fore.GREEN} ✔  LOGIN REALIZADO COM SUCESSO!{Style.RESET_ALL}")
-        time.sleep(1)
-        if accountsList[userName]["first_login"] == True:
-            accountsList[userName]["type_of_fish"] = personality_quiz()
-            time.sleep(3)
-            accountsList[userName]["first_login"] = False
-            push_accounts_list(accountsList)
-        profile(accountsList[userName])
-    else:
-        print("")
-        print(f"{Fore.RED} ✖  USUARIO OU SENHA INCORRETOS!{Style.RESET_ALL}")
+        print(f"{Fore.RED} ✖  USÚARIO NÃO ENCONTRADO!{Style.RESET_ALL}")
         time.sleep(1)

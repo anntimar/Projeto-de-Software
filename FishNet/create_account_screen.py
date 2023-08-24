@@ -2,28 +2,16 @@ import time
 import pwinput
 
 from colorama import Fore, Style
-from accounts_list_actions import *
+from classs.account import Account
+from classs.postFile import postFile
 from banner import create_account_banner
+from actions import *
 
-
-def new_account(user, password, email):
-    accountsList = pull_accounts_list()
-    newAccount = {
-        "user": user,
-        "password": password,
-        "email": email,
-        "first_login": True,
-        "type_of_fish": 0,
-        "posts": [],
-        "fish_cluters": [],
-        "fish_friends": [],
-    }
-    accountsList[user] = newAccount
-    push_accounts_list(accountsList)
+accounts = postFile("FishNet/accountsList.json")
 
 
 def create_account():
-    accountsList = pull_accounts_list()
+    clean_terminal()
     create_account_banner()
 
     while True:
@@ -42,7 +30,7 @@ def create_account():
         userName = userName.removeprefix("_")
         # ---------------------------------------
 
-        if userName in accountsList:
+        if userName in accounts.content:
             print(f"{Fore.RED} ✖  NOME DE USUARIO INDISPONÍVEL{Style.RESET_ALL}")
             time.sleep(1)
         else:
@@ -85,7 +73,9 @@ def create_account():
     userEmail = str(userEmail)
     userEmail = userEmail.lower()
 
-    new_account(userName, userPassword, userEmail)
+    newAccount = Account(userName, userPassword, userEmail)
+    accounts.content[userName] = newAccount.push()
+    accounts.push()
 
     print("")
     print(f"{Fore.GREEN} ✔  CONTA CRIADA COM SUCESSO{Style.RESET_ALL}")
