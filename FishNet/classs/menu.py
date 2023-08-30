@@ -46,13 +46,13 @@ class Menu:
 
     def fish_cluster():
         Banner.profile()
-        ct.print("➀", "FEED DOS CARDUMES")
-        ct.print("➁", "CRIAR CARDUME")
-        ct.print("➂", "ENTRAR EM UM CARDUME")
-        ct.print("➃", "SAIR DE UM CARDUME")
-        ct.print("➄", "VOLTAR")
+        ct.print("➀", "VOLTAR")
+        ct.print("➁", "FEED DOS CARDUMES")
+        ct.print("➂", "CRIAR CARDUME")
+        ct.print("➃", "ENTRAR EM UM CARDUME")
+        ct.print("➄", "SAIR DE UM CARDUME")
         ct.jumpLine()
-        return ct.inputStr()
+        return ct.inputInt()
 
     def edit_account():
         Banner.profile()

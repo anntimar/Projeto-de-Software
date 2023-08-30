@@ -1,4 +1,4 @@
-# list class
+# postFile class
 
 import json
 

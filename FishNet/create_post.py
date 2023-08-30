@@ -3,8 +3,6 @@ import time
 from classs.banner import Banner
 from classs.menu import Menu
 from post_pull import postPull
-from colorama import Fore
-from colorama import Style
 from classs.customTerminal import CustomTerminal as ct
 
 
