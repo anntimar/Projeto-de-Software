@@ -7,11 +7,10 @@ from classs.postFile import postFile
 from banner import create_account_banner
 from actions import *
 
-accounts = postFile("FishNet/accountsList.json")
+accounts = postFile("FishNet/file_data/accountsList.json")
 
 
 def create_account():
-    clean_terminal()
     create_account_banner()
 
     while True:
@@ -73,9 +72,7 @@ def create_account():
     userEmail = str(userEmail)
     userEmail = userEmail.lower()
 
-    newAccount = Account(userName, userPassword, userEmail)
-    accounts.content[userName] = newAccount.push()
-    accounts.push()
+    Account(userName, userPassword, userEmail)
 
     print("")
     print(f"{Fore.GREEN} ✔  CONTA CRIADA COM SUCESSO{Style.RESET_ALL}")

@@ -3,7 +3,7 @@ from menus import feed_menu
 from post_list_actions import *
 
 
-def feed(perfilUser, feedlist):
+def feed(account, feedlist):
     indexPost = 0
     while True:
         clean_terminal()
@@ -11,18 +11,18 @@ def feed(perfilUser, feedlist):
         posts = postList[feedlist][indexPost]
         action = feed_menu(posts)
         if action == "1":
-            if perfilUser["user"] != postList[feedlist][indexPost]["userName"]:
-                if perfilUser["user"] in postList[feedlist][indexPost]["pops"]:
-                    postList[feedlist][indexPost]["pops"].remove(perfilUser["user"])
-                if perfilUser["user"] not in postList[feedlist][indexPost]["bubbles"]:
-                    postList[feedlist][indexPost]["bubbles"].append(perfilUser["user"])
+            if account.user != postList[feedlist][indexPost]["userName"]:
+                if account.user in postList[feedlist][indexPost]["pops"]:
+                    postList[feedlist][indexPost]["pops"].remove(account.user)
+                if account.user not in postList[feedlist][indexPost]["bubbles"]:
+                    postList[feedlist][indexPost]["bubbles"].append(account.user)
 
         elif action == "2":
-            if perfilUser["user"] != postList[feedlist][indexPost]["userName"]:
-                if perfilUser["user"] in postList[feedlist][indexPost]["bubbles"]:
-                    postList[feedlist][indexPost]["bubbles"].remove(perfilUser["user"])
-                if perfilUser["user"] not in postList[feedlist][indexPost]["pops"]:
-                    postList[feedlist][indexPost]["pops"].append(perfilUser["user"])
+            if account.user != postList[feedlist][indexPost]["userName"]:
+                if account.user in postList[feedlist][indexPost]["bubbles"]:
+                    postList[feedlist][indexPost]["bubbles"].remove(account.user)
+                if account.user not in postList[feedlist][indexPost]["pops"]:
+                    postList[feedlist][indexPost]["pops"].append(account.user)
         elif action == "3":
             if indexPost == 0:
                 indexPost = len(postList[feedlist]) - 1

@@ -7,17 +7,28 @@ from fish_data import *
 from banner import *
 
 
+def input_int():
+    try:
+        return int(input(f"{Fore.CYAN} ▷  {Fore.YELLOW}"))
+    except:
+        return 0
+
+
+def input_str():
+    try:
+        return input(f"{Fore.CYAN} ▷  {Fore.YELLOW} ").upper()
+    except:
+        return "0"
+
+
 def main_menu():
     clean_terminal()
     main_banner()
-    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}LOGIN{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}CRIAR CONTA{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➀ {Fore.CYAN}SAIR{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➁ {Fore.CYAN}LOGIN{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW} ➂ {Fore.CYAN}CRIAR CONTA{Style.RESET_ALL}")
     print("")
-    action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
-    Style.RESET_ALL
-    action = action.upper()
-    return action[0]
+    return input_int()
 
 
 def profile_menu():
@@ -30,10 +41,7 @@ def profile_menu():
     print(f"{Fore.YELLOW} ➄ {Fore.CYAN}EDITAR CONTA{Style.RESET_ALL}")
     print(f"{Fore.YELLOW} ➅ {Fore.CYAN}SAIR{Style.RESET_ALL}")
     print("")
-    action = input(f"{Fore.CYAN} ▷  {Fore.YELLOW}")
-    Style.RESET_ALL
-    action = action.upper()
-    return action[0]
+    return input_str()
 
 
 def following_menu():
@@ -93,19 +101,18 @@ def edit_account_menu():
     return action[0]
 
 
-def feed_of_fish_cluters_menu(perfilUser):
-    accountsList = pull_accounts_list()
+def feed_of_fish_cluters_menu(account):
     numbers = ["", "➀", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉"]
 
     clean_terminal()
     profile_banner()
 
-    if len(accountsList[perfilUser["user"]]["fish_cluters"]) == 0:
+    if len(account.fish_cluters) == 0:
         print(f"{Fore.RED} ✖  VOCÊ NÃO ESTÁ EM NEM UM CARDUME!{Style.RESET_ALL}")
         time.sleep(2)
     else:
         j = 0
-        for i in accountsList[perfilUser["user"]]["fish_cluters"]:
+        for i in account.fish_cluters:
             j += 1
             print(f"{Fore.YELLOW} {numbers[j]} {Fore.CYAN}{i}{Style.RESET_ALL}")
 
@@ -120,19 +127,18 @@ def feed_of_fish_cluters_menu(perfilUser):
     return "0"
 
 
-def post_feed_of_fish_cluters_menu(perfilUser):
-    accountsList = pull_accounts_list()
+def post_feed_of_fish_cluters_menu(account):
     numbers = ["", "➀", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉"]
 
     clean_terminal()
     profile_banner()
 
-    if len(accountsList[perfilUser["user"]]["fish_cluters"]) == 0:
+    if len(account.fish_cluters) == 0:
         print(f"{Fore.RED} ✖  VOCÊ NÃO ESTÁ EM NEM UM CARDUME!{Style.RESET_ALL}")
         time.sleep(2)
     else:
         j = 0
-        for i in accountsList[perfilUser["user"]]["fish_cluters"]:
+        for i in account.fish_cluters:
             j += 1
             print(f"{Fore.YELLOW} {numbers[j]} {Fore.CYAN}{i}{Style.RESET_ALL}")
 

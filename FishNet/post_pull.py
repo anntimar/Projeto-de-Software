@@ -1,12 +1,12 @@
 from post_list_actions import *
 
 
-def postPull(perfilUser, feedlist, text):
+def postPull(account, feedlist, text):
     postList = pull_post_list()
     postList[feedlist].append(
         {
-            "type_of_fish": perfilUser["type_of_fish"],
-            "userName": perfilUser["user"],
+            "type_of_fish": account.type_of_fish,
+            "userName": account.user,
             "bubbles": [],
             "pops": [],
             "content": text,

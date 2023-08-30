@@ -11,45 +11,35 @@ from colorama import Fore
 from colorama import Style
 
 
-def createPost(perfilUser):
+def createPost(account):
     while True:
         action = post_menu()
         if action == "1":
-            clean_terminal()
-            profile_banner()
-            content = input(f"{Fore.CYAN} digite seu post ▷  {Fore.YELLOW}")
-            postPull(perfilUser, "ocean", content)
-            clean_terminal()
-            profile_banner()
-            print(f"{Fore.GREEN} ✔  POST ENVIADO COM SUCESSO!{Style.RESET_ALL}")
-            time.sleep(2)
+            post_nenu(account, "ocean")
         elif action == "2":
-            post_feed_of_fish_cluters(perfilUser)
+            post_feed_of_fish_cluters(account)
         elif action == "3":
             break
 
 
-def post_feed_of_fish_cluters(perfilUser):
-    accountsList = pull_accounts_list()
-    postList = pull_post_list()
+def post_nenu(account, fishCluters):
+    profile_banner()
+    content = input(f"{Fore.CYAN} DIGITE SEU POST ▷  {Fore.YELLOW}")
+    postPull(account, fishCluters, content)
+    profile_banner()
+    print(f"{Fore.GREEN} ✔  POST ENVIADO COM SUCESSO!{Style.RESET_ALL}")
+    time.sleep(2)
+
+
+def post_feed_of_fish_cluters(account):
+    account.pull()
+
     while True:
-        action = int(post_feed_of_fish_cluters_menu(perfilUser))
+        action = int(post_feed_of_fish_cluters_menu(account))
         if action == 0:
             return
+        if action <= len(account.fish_cluters):
+            post_nenu(account, account.fish_cluters[action - 1])
 
-        if action <= len(accountsList[perfilUser["user"]]["fish_cluters"]):
-            clean_terminal()
-            profile_banner()
-            content = input(f"{Fore.CYAN} DIGITE SEU POST ▷  {Fore.YELLOW}")
-            postPull(
-                perfilUser,
-                accountsList[perfilUser["user"]]["fish_cluters"][action - 1],
-                content,
-            )
-            clean_terminal()
-            profile_banner()
-            print(f"{Fore.GREEN} ✔  POST ENVIADO COM SUCESSO!{Style.RESET_ALL}")
-            time.sleep(2)
-
-        elif action == len(accountsList[perfilUser["user"]]["fish_cluters"]) + 1:
+        elif action == len(account.fish_cluters) + 1:
             break

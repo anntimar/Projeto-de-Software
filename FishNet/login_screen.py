@@ -16,7 +16,6 @@ def login():
     user = input(f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DE USÚARIO ▷  {Fore.YELLOW}")
     user = str(user).lower()
     print(f"{Style.RESET_ALL}")
-
     password = pwinput.pwinput(f"{Fore.YELLOW} 🔑{Fore.CYAN}  SENHA  ▷  {Fore.YELLOW}")
     password = str(password).lower()
     print(f"{Style.RESET_ALL}")

@@ -71,5 +71,5 @@ def personality_quiz():
     print(
         f"{Fore.CYAN} VOCÊ É UM PEIXE {fishNames[fishIndex]} {Fore.YELLOW}{fishIcon[fishIndex]}{Fore.CYAN} , {fishCharacteristics[fishIndex]}."
     )
-
+    time.sleep(3)
     return fishIndex

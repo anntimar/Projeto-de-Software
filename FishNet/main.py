@@ -1,18 +1,17 @@
-from banner import *
-from actions import *
-from menus import *
+# from banner import *
+# from actions import *
+from menus import main_menu
 from login_screen import login
 from create_account_screen import create_account
 from colorama import init as colorama_init
 
 colorama_init()
 
-clean_terminal()
 while True:
-    action = main_menu()
-    if action == "1":
-        login()
-    elif action == "2":
-        create_account()
-    elif action == "3":
-        break
+    match main_menu():
+        case 1:
+            break
+        case 2:
+            login()
+        case 3:
+            create_account()
