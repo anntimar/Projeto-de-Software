@@ -9,17 +9,15 @@ from classs.banner import Banner
 
 def login():
     Banner.login()
-
     user = ct.inputStr("🐟", "NOME DE USÚARIO")
-    ct.jumpLine()
+
+    Banner.login()
     password = ct.inputPassword("SENHA")
-    ct.jumpLine()
 
     Banner.login()
     try:
         account = Account(user)
         if account.password == password:
-            ct.jumpLine()
             ct.positiveMessage("LOGIN REALIZADO COM SUCESSO!")
             time.sleep(1)
             if account.first_login == True:
@@ -27,12 +25,14 @@ def login():
                 account.first_login = False
                 account.type_of_fish = personality_quiz()
                 account.push()
-            profile(account)
+            try:
+                profile(account)
+            except:
+                ct.negativeMessage("ERRO NO profile_screen")
+                time.sleep(2)
         else:
-            ct.jumpLine()
             ct.negativeMessage("SENHA INCORRETA!")
-            time.sleep(1)
+            time.sleep(2)
     except:
-        ct.jumpLine()
         ct.negativeMessage("USÚARIO NÃO ENCONTRADO!")
-        time.sleep(1)
+        time.sleep(2)

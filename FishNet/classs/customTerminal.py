@@ -20,17 +20,14 @@ class CustomTerminal:
     def print(icon, text):
         print(f"{Fore.YELLOW} {icon} {Fore.CYAN} {text}")
 
-    def inputStr():
+    def inputStr(icon="none", text="none"):
         try:
-            return str(input(f"{Fore.CYAN} ▷  {Fore.YELLOW} ")).lower()
-        except:
-            return "0"
-
-    def inputStr(icon, text):
-        try:
-            return str(
-                input(f"{Fore.YELLOW} {icon} {Fore.CYAN} {text} ▷  {Fore.YELLOW}")
-            ).lower()
+            if icon == "none" and text == "none":
+                return str(input(f"{Fore.CYAN} ▷  {Fore.YELLOW} ")).lower()
+            else:
+                return str(
+                    input(f"{Fore.YELLOW} {icon} {Fore.CYAN} {text} ▷  {Fore.YELLOW}")
+                ).lower()
         except:
             return "0"
 

@@ -18,14 +18,14 @@ class Menu:
 
     def profile():
         Banner.profile()
-        ct.print("➀", "POSTAR")
-        ct.print("➁", "FEED OCEANO")
-        ct.print("➂", "CARDUMES")
-        ct.print("➃", "PEIXES AMIGOS")
-        ct.print("➄", "EDITAR CONTA")
-        ct.print("➅", "SAIR")
+        ct.print("➀", "SAIR")
+        ct.print("➁", "POSTAR")
+        ct.print("➂", "FEED OCEANO")
+        ct.print("➃", "CARDUMES")
+        ct.print("➄", "PEIXES AMIGOS")
+        ct.print("➅", "EDITAR CONTA")
         ct.jumpLine()
-        return ct.inputStr()
+        return ct.inputInt()
 
     def following():
         Banner.profile()
@@ -66,11 +66,11 @@ class Menu:
 
     def post():
         Banner.profile()
-        ct.print("➀", "PORTAR NO OCEANO")
-        ct.print("➁", "POSTAR EM UM CARDUME")
-        ct.print("➂", "VOLTAR")
+        ct.print("➀", "VOLTAR")
+        ct.print("➁", "PORTAR NO OCEANO")
+        ct.print("➂", "POSTAR EM UM CARDUME")
         ct.jumpLine()
-        return ct.inputStr()
+        return ct.inputInt()
 
     def post_feed_of_fish_cluters(account):
         numbers = ["", "➀", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉"]
@@ -81,15 +81,14 @@ class Menu:
             ct.negativeMessage("VOCÊ NÃO ESTÁ EM NEM UM CARDUME!")
             time.sleep(2)
         else:
-            j = 0
+            j = 1
+            ct.print(numbers[j], "VOLTAR")
             for i in account.fish_cluters:
                 j += 1
-                print(numbers[j], i)
+                ct.print(numbers[j], i)
 
-            j += 1
-            print(numbers[j], "VOLTAR")
             ct.jumpLine()
-            return ct.inputStr()
+            return ct.inputInt()
 
         return "0"
 
