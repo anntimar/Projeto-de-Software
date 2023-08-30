@@ -1,14 +1,14 @@
+import time
+from fish_data import *
+from classs.banner import Banner
+from classs.customTerminal import CustomTerminal as ct
+
 from colorama import Fore
 from colorama import Style
-from actions import clean_terminal
-import time
-from banner import *
-from fish_data import *
 
 
 def personality_quiz():
-    clean_terminal()
-    personality_quiz_banner()
+    Banner.personality_quiz()
 
     # Definindo as perguntas
     perguntas = [
@@ -46,7 +46,7 @@ def personality_quiz():
         # Armazenando a resposta na lista
         respostas.append(int(resposta))
 
-    clean_terminal()
+    ct.clean()
 
     fishAffinity = [0, 0, 0, 0, 0, 0]
 

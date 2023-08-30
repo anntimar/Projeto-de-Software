@@ -1,19 +1,16 @@
 import time
-from menus import post_feed_of_fish_cluters_menu
-from banner import profile_banner
-from accounts_list_actions import pull_accounts_list
-from post_list_actions import pull_post_list
-from post_list_actions import push_post_list
-from actions import clean_terminal
+
+from classs.banner import Banner
+from classs.menu import Menu
 from post_pull import postPull
-from menus import post_menu
 from colorama import Fore
 from colorama import Style
+from classs.customTerminal import CustomTerminal as ct
 
 
 def createPost(account):
     while True:
-        action = post_menu()
+        action = Menu.post()
         if action == "1":
             post_nenu(account, "ocean")
         elif action == "2":
@@ -23,10 +20,10 @@ def createPost(account):
 
 
 def post_nenu(account, fishCluters):
-    profile_banner()
+    Banner.profile()
     content = input(f"{Fore.CYAN} DIGITE SEU POST ▷  {Fore.YELLOW}")
     postPull(account, fishCluters, content)
-    profile_banner()
+    Banner.profile()
     print(f"{Fore.GREEN} ✔  POST ENVIADO COM SUCESSO!{Style.RESET_ALL}")
     time.sleep(2)
 
@@ -35,7 +32,7 @@ def post_feed_of_fish_cluters(account):
     account.pull()
 
     while True:
-        action = int(post_feed_of_fish_cluters_menu(account))
+        action = int(Menu.post_feed_of_fish_cluters(account))
         if action == 0:
             return
         if action <= len(account.fish_cluters):

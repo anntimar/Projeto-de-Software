@@ -1,15 +1,15 @@
-from actions import clean_terminal
-from menus import feed_menu
 from post_list_actions import *
+from classs.menu import Menu
+from classs.customTerminal import CustomTerminal as ct
 
 
 def feed(account, feedlist):
     indexPost = 0
     while True:
-        clean_terminal()
+        ct.clean()
         postList = pull_post_list()
         posts = postList[feedlist][indexPost]
-        action = feed_menu(posts)
+        action = Menu.feed(posts)
         if action == "1":
             if account.user != postList[feedlist][indexPost]["userName"]:
                 if account.user in postList[feedlist][indexPost]["pops"]:

@@ -2,16 +2,16 @@ import time
 from colorama import Fore
 from colorama import Style
 from feed_screen import feed
-from banner import profile_banner
-from menus import *
+
 from post_list_actions import *
 from accounts_list_actions import *
-from actions import *
+from classs.menu import Menu
+from classs.customTerminal import CustomTerminal as ct
 
 
 def fish_cluter_screen(account):
     while True:
-        action = fish_cluster_menu()
+        action = Menu.fish_cluster()
         if action == "1":
             feed_of_fish_cluters(account)
         elif action == "2":
@@ -29,7 +29,7 @@ def crate_fish_cluster(account):
     account.pull()
 
     while True:
-        profile_banner()
+        Menu.profile()
         fishClusterName = input(
             f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DO CARDUME ▷  {Fore.YELLOW}"
         )
@@ -48,14 +48,14 @@ def crate_fish_cluster(account):
             print(f"{Fore.GREEN} ✔  NOME DE CARDUME DISPONÍVEL!{Style.RESET_ALL}")
             time.sleep(1)
             while True:
-                action = create_fish_cluster_menu()
+                action = Menu.create_fish_cluster()
                 if action == "1":
                     add_user_in_fish_cluster(fishClusterName)
                 elif action == "2":
                     remove_user_in_fish_cluster(fishClusterName)
                 elif action == "3":
                     break
-            profile_banner()
+            Menu.profile()
             print(f"{Fore.GREEN} ✔  CARDUME CRIADO COM SUCESSO!{Style.RESET_ALL}")
             account.push()
             time.sleep(1)
@@ -66,7 +66,7 @@ def add_user_in_fish_cluster(fishClusterName):
     accountsList = pull_accounts_list()
 
     while True:
-        profile_banner()
+        Menu.profile()
         userName = input(
             f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DO USUÁRIO ▷  {Fore.YELLOW}"
         )
@@ -101,8 +101,8 @@ def remove_user_in_fish_cluster(fishClusterName):
     accountsList = pull_accounts_list()
 
     while True:
-        clean_terminal()
-        profile_banner()
+        ct.clean()
+        Menu.profile()
         userName = input(
             f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DO USUÁRIO ▷  {Fore.YELLOW}"
         )
@@ -136,8 +136,8 @@ def enter_user_in_fish_cluster(perfilUser):
     accountsList = pull_accounts_list()
 
     while True:
-        clean_terminal()
-        profile_banner()
+        ct.clean()
+        Menu.profile()
         fishClusterName = input(
             f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DO CARDUME ▷  {Fore.YELLOW}"
         )
@@ -174,8 +174,8 @@ def exit_user_in_fish_cluster(perfilUser):
     accountsList = pull_accounts_list()
 
     while True:
-        clean_terminal()
-        profile_banner()
+        ct.clean()
+        Menu.profile()
         fishClusterName = input(
             f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DO CARDUME ▷  {Fore.YELLOW}"
         )
@@ -210,15 +210,15 @@ def feed_of_fish_cluters(account):
     account.pull()
 
     while True:
-        action = int(feed_of_fish_cluters_menu(account))
+        action = int(Menu.post_feed_of_fish_cluters(account))
         if action == 0:
             return
         if action <= len(account.fish_cluters):
             if len(postList[account.fish_cluters[action - 1]]) > 0:
                 feed(account, account.fish_cluters[action - 1])
             else:
-                clean_terminal()
-                profile_banner()
+                ct.clean()
+                Menu.profile()
                 print(f"{Fore.RED} ✖  NÃO EXISTE POSTS NESSE CARDUME!{Style.RESET_ALL}")
                 time.sleep(2)
         elif action == len(account.fish_cluters) + 1:

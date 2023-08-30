@@ -1,15 +1,14 @@
 import time
 from colorama import Fore
 from colorama import Style
-from actions import clean_terminal
-from banner import profile_banner
-from menus import following_menu
+from classs.menu import Menu
 from accounts_list_actions import *
+from classs.customTerminal import CustomTerminal as ct
 
 
 def fish_friends(perfilUser):
     while True:
-        action = following_menu()
+        action = Menu.following()
         if action == "1":
             add_fish_friend(perfilUser)
         elif action == "2":
@@ -24,8 +23,8 @@ def add_fish_friend(perfilUser):
     accountsList = pull_accounts_list()
 
     while True:
-        clean_terminal()
-        profile_banner()
+        ct.clean()
+        Menu.profile()
         userName = input(
             f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DO USUÁRIO ▷  {Fore.YELLOW}"
         )
@@ -60,8 +59,8 @@ def remove_fish_friend(perfilUser):
     accountsList = pull_accounts_list()
 
     while True:
-        clean_terminal()
-        profile_banner()
+        ct.clean()
+        Menu.profile()
         userName = input(
             f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DO USUÁRIO ▷  {Fore.YELLOW}"
         )
@@ -94,16 +93,16 @@ def remove_fish_friend(perfilUser):
 
 def see_fish_friend(perfilUser):
     accountsList = pull_accounts_list()
-    clean_terminal()
-    profile_banner()
+    ct.clean()
+    Menu.profile()
     if len(accountsList[perfilUser["user"]]["fish_friends"]) == 0:
         print(f"{Fore.RED} ✖  VOCÊ NÃO TEM NEM UM PEIXE AMIGO!{Style.RESET_ALL}")
         time.sleep(2)
         return
 
     while True:
-        clean_terminal()
-        profile_banner()
+        ct.clean()
+        Menu.profile()
         for i in accountsList[perfilUser["user"]]["fish_friends"]:
             print(f"{Fore.YELLOW} 🐟 {Fore.CYAN} {i}  {Fore.YELLOW}")
 

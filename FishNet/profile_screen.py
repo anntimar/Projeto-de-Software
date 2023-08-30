@@ -4,14 +4,12 @@ from create_post import createPost
 from feed_screen import feed
 from edit_account_screen import edit_account
 from accounts_list_actions import *
-from menus import profile_menu
-from actions import clean_terminal
 
 
 def profile(account):
     account.pull()
     while True:
-        action = profile_menu()
+        action = Menu.profile()
         if action == "1":
             createPost(account)
         elif action == "2":

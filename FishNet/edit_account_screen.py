@@ -1,15 +1,15 @@
 import time
 import pwinput
 from accounts_list_actions import *
-from menus import *
-from actions import clean_terminal
 from colorama import Fore
 from colorama import Style
+from classs.menu import Menu
+from classs.customTerminal import CustomTerminal as ct
 
 
 def edit_account(perfilUser):
     while True:
-        action = edit_account_menu()
+        action = Menu.edit_account()
         if action == "1":
             edit_user_name(perfilUser)
         elif action == "2":
@@ -26,7 +26,7 @@ def edit_account(perfilUser):
 
 
 def edit_user_name(perfilUser):
-    clean_terminal()
+    ct.clean()
     accountsList = pull_accounts_list()
 
     while True:
@@ -65,14 +65,14 @@ def edit_user_name(perfilUser):
 
     time.sleep(2)
 
-    clean_terminal()
+    ct.clean()
     print(f"{Fore.GREEN} ✔  NOME DE USUÁRIO EDITADO COM SUCESSO{Style.RESET_ALL}")
 
     time.sleep(2)
 
 
 def edite_password(perfilUser):
-    clean_terminal()
+    ct.clean()
     accountsList = pull_accounts_list()
     key1 = "/"
     key2 = "*"
@@ -99,14 +99,14 @@ def edite_password(perfilUser):
     accountsList[perfilUser["user"]]["password"] = userPassword
     push_accounts_list(accountsList)
 
-    clean_terminal()
+    ct.clean()
     print(f"{Fore.GREEN} ✔  SENHA EDITADA COM SUCESSO{Style.RESET_ALL}")
 
     time.sleep(2)
 
 
 def edite_email(perfilUser):
-    clean_terminal()
+    ct.clean()
     accountsList = pull_accounts_list()
 
     userEmail = input(
@@ -118,7 +118,7 @@ def edite_email(perfilUser):
     accountsList[perfilUser["user"]]["email"] = userEmail
     push_accounts_list(accountsList)
 
-    clean_terminal()
+    ct.clean()
     print(f"{Fore.GREEN} ✔  E-MAIL EDITADA COM SUCESSO{Style.RESET_ALL}")
 
     time.sleep(2)
@@ -126,17 +126,17 @@ def edite_email(perfilUser):
 
 def delete_account(perfilUser):
     while True:
-        action = delete_account_menu()
+        action = Menu.delete_account()
         if action == "1":
             accountsList = pull_accounts_list()
             del accountsList[perfilUser["user"]]
             push_accounts_list(accountsList)
-            clean_terminal()
+            ct.clean()
             print(f"{Fore.GREEN} ✔  CONTA EXCLUIDA COM SUCESSO{Style.RESET_ALL}")
             time.sleep(2)
             return False
         elif action == "2":
-            clean_terminal()
+            ct.clean()
             print(
                 f"{Fore.GREEN} ✔  OBRIGADO POR NÃO EXCLUIR SUA CONTA!{Style.RESET_ALL}"
             )

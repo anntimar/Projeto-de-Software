@@ -2,16 +2,15 @@ import time
 import pwinput
 
 from colorama import Fore, Style
+from classs.banner import Banner
 from classs.account import Account
 from classs.postFile import postFile
-from banner import create_account_banner
-from actions import *
 
 accounts = postFile("FishNet/file_data/accountsList.json")
 
 
 def create_account():
-    create_account_banner()
+    Banner.create_account()
 
     while True:
         userName = input(

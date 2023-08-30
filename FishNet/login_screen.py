@@ -1,31 +1,26 @@
 import time
-import pwinput
-from classs.postFile import *
+
+from quiz import personality_quiz
 from profile_screen import profile
-from banner import *
-from actions import *
-from quiz import *
-from colorama import Fore
-from colorama import Style
+from classs.customTerminal import CustomTerminal as ct
 from classs.account import Account
+from classs.banner import Banner
 
 
 def login():
-    login_banner()
+    Banner.login()
 
-    user = input(f"{Fore.YELLOW} 🐟 {Fore.CYAN} NOME DE USÚARIO ▷  {Fore.YELLOW}")
-    user = str(user).lower()
-    print(f"{Style.RESET_ALL}")
-    password = pwinput.pwinput(f"{Fore.YELLOW} 🔑{Fore.CYAN}  SENHA  ▷  {Fore.YELLOW}")
-    password = str(password).lower()
-    print(f"{Style.RESET_ALL}")
+    user = ct.inputStr("🐟", "NOME DE USÚARIO")
+    ct.jumpLine()
+    password = ct.inputPassword("SENHA")
+    ct.jumpLine()
 
-    login_banner()
+    Banner.login()
     try:
         account = Account(user)
         if account.password == password:
-            print("")
-            print(f"{Fore.GREEN} ✔  LOGIN REALIZADO COM SUCESSO!{Style.RESET_ALL}")
+            ct.jumpLine()
+            ct.positiveMessage("LOGIN REALIZADO COM SUCESSO!")
             time.sleep(1)
             if account.first_login == True:
                 time.sleep(3)
@@ -34,10 +29,10 @@ def login():
                 account.push()
             profile(account)
         else:
-            print("")
-            print(f"{Fore.RED} ✖ SENHA INCORRETA!{Style.RESET_ALL}")
+            ct.jumpLine()
+            ct.negativeMessage("SENHA INCORRETA!")
             time.sleep(1)
     except:
-        print("")
-        print(f"{Fore.RED} ✖  USÚARIO NÃO ENCONTRADO!{Style.RESET_ALL}")
+        ct.jumpLine()
+        ct.negativeMessage("USÚARIO NÃO ENCONTRADO!")
         time.sleep(1)

@@ -5,10 +5,7 @@ from classs.postFile import postFile
 
 class Account:
     def __init__(self, user, password="_none", email="_none"):
-        # self.__accounts = postFile("FishNet/file_data/accountsList.json")
-        self.__accounts = postFile(
-            "C:/Users/thiag/OneDrive/Documentos/PROJETOS UFAL/FishNet/Projeto-de-Software/FishNet/file_data/accountsList.json"
-        )
+        self.__accounts = postFile("FishNet/file_data/accountsList.json")
 
         if password == "_none" and email == "_none":
             self.__account = self.__accounts.content[user]
