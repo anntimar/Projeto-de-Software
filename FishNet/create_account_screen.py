@@ -1,79 +1,58 @@
 import time
-import pwinput
 
-from colorama import Fore, Style
 from classs.banner import Banner
 from classs.account import Account
 from classs.postFile import postFile
+from classs.customTerminal import CustomTerminal as ct
+
 
 accounts = postFile("FishNet/file_data/accountsList.json")
 
 
 def create_account():
-    Banner.create_account()
-
     while True:
-        userName = input(
-            f"{Fore.YELLOW} ㋡ {Fore.CYAN} ESCOLHA UM NOME DE USUARIO ▷  {Fore.YELLOW}"
-        )
-        # ---------------------------------------
-        userName = str(userName)
-        userName = userName.lower()
-        userName = userName.replace(" ", "_")
-
-        while "__" in userName:
-            userName = userName.replace("__", "_")
-
-        userName = userName.removesuffix("_")
-        userName = userName.removeprefix("_")
-        # ---------------------------------------
+        Banner.create_account()
+        userName = ct.inputUserName("INFORME SEU NOME DE USÚARIO")
 
         if userName in accounts.content:
-            print(f"{Fore.RED} ✖  NOME DE USUARIO INDISPONÍVEL{Style.RESET_ALL}")
-            time.sleep(1)
+            Banner.create_account()
+            ct.negativeMessage("NOME DE USÚARIO INDISPONÍVEL")
+            time.sleep(2)
         else:
             break
-    print("")
-    print(
-        f"{Fore.YELLOW} ➥   {Fore.CYAN}SEU NOME DE USUARIO É ▷  {Fore.YELLOW}{userName}{Style.RESET_ALL}"
-    )
 
-    print(f"{Style.RESET_ALL}")
+    Banner.create_account()
+    ct.positiveMessage("SEU NOME DE USÚARIO É ▷  " + userName)
+
+    time.sleep(2)
 
     key1 = "/"
     key2 = "*"
     while key1 != key2:
-        userPassword = pwinput.pwinput(
-            f"{Fore.YELLOW} 🔑 {Fore.CYAN} ESCOLHA UMA SENHA ▷  {Fore.YELLOW}"
-        )
-        key1 = str(userPassword)
-        print(f"{Style.RESET_ALL}")
+        Banner.create_account()
+        key1 = ct.inputPassword("ESCOLHA UMA SENHA")
 
-        userPassword = pwinput.pwinput(
-            f"{Fore.YELLOW} 🔑 {Fore.CYAN} CONFIRME A SENHA ▷  {Fore.YELLOW}"
-        )
-        key2 = str(userPassword)
-        print(f"{Style.RESET_ALL}")
+        Banner.create_account()
+        key2 = ct.inputPassword("CONFIRME A SENHA")
 
         if key1 != key2:
-            print(f"{Fore.RED} ✖  SENHAS DIFERENTES{Style.RESET_ALL}")
-            print("")
+            Banner.create_account()
+            ct.negativeMessage("SENHAS DIFERENTES!")
+            time.sleep(2)
         else:
-            print(f"{Fore.GREEN} ✔  SENHA CONFIRMADA{Style.RESET_ALL}")
-            print("")
+            Banner.create_account()
+            ct.positiveMessage("SENHA CONFIRMADA!")
+            time.sleep(2)
 
-    userPassword = str(key2)
-    userPassword = userPassword.lower()
+    Banner.create_account()
+    userEmail = ct.inputStr("✉", "INFORME SEU E-MAIL")
 
-    userEmail = input(
-        f"{Fore.YELLOW} ✉ {Fore.CYAN} INFORME SEU E-MAIL ▷  {Fore.YELLOW}"
-    )
-    userEmail = str(userEmail)
-    userEmail = userEmail.lower()
+    Banner.create_account()
+    ct.positiveMessage("E-MAIL CONFIRMADO!")
+    time.sleep(2)
 
-    Account(userName, userPassword, userEmail)
+    Account(userName, key2, userEmail)
 
-    print("")
-    print(f"{Fore.GREEN} ✔  CONTA CRIADA COM SUCESSO{Style.RESET_ALL}")
-
+    Banner.create_account()
+    ct.positiveMessage("CONTA CRIADA COM SUCESSO")
     time.sleep(2)

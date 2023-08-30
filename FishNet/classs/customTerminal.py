@@ -11,14 +11,14 @@ class CustomTerminal:
     def __init__(self):
         colorama_init()
 
-    def print(icon, text):
-        print(f"{Fore.YELLOW} {icon} {Fore.CYAN}{text}")
-
     def positiveMessage(text):
         print(f"{Fore.GREEN} ✔  {text}")
 
     def negativeMessage(text):
         print(f"{Fore.RED} ✖  {text}")
+
+    def print(icon, text):
+        print(f"{Fore.YELLOW} {icon} {Fore.CYAN} {text}")
 
     def inputStr():
         try:
@@ -80,4 +80,24 @@ class CustomTerminal:
                 pwinput.pwinput(f"{Fore.YELLOW} 🔑{Fore.CYAN}  {text}  ▷  {Fore.YELLOW}")
             ).lower()
         except:
-            return 0
+            return "0"
+
+    def inputUserName(text):
+        try:
+            userName = str(
+                input(f"{Fore.YELLOW} 🐟 {Fore.CYAN} {text}  ▷  {Fore.YELLOW}")
+            )
+            # ---------------------------------------
+            userName = userName.replace(" ", "_")
+
+            while "__" in userName:
+                userName = userName.replace("__", "_")
+
+            userName = userName.removesuffix("_")
+            userName = userName.removeprefix("_")
+            userName.lower()
+            # ---------------------------------------
+
+            return userName
+        except:
+            return "0"

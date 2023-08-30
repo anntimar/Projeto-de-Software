@@ -83,5 +83,35 @@
         "posts": [],
         "fish_cluters": [],
         "fish_friends": []
+    },
+    "thiago_l": {
+        "user": "thiago_l",
+        "password": "1212",
+        "email": "thiago@",
+        "first_login": true,
+        "type_of_fish": 0,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
+    },
+    "thiafo": {
+        "user": "thiafo",
+        "password": "1212",
+        "email": "afasfas",
+        "first_login": true,
+        "type_of_fish": 0,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
+    },
+    "thiagfos": {
+        "user": "thiagfos",
+        "password": "1212",
+        "email": "thjasa",
+        "first_login": true,
+        "type_of_fish": 0,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
     }
 }
