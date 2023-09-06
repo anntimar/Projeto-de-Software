@@ -1,16 +1,15 @@
 # Account class
 
-from classs.postFile import postFile
+from classs.postFile import *
 
 
 class Account:
     def __init__(self, user, password="_none", email="_none"):
-        self.__accounts = postFile("FishNet/file_data/accountsList.json")
+        self.__accounts = AccountsFile()
 
         if password == "_none" and email == "_none":
             self.__account = self.__accounts.content[user]
-
-            self.user = self.__account["user"]
+            self.__user = self.__account["user"]
             self.password = self.__account["password"]
             self.email = self.__account["email"]
             self.first_login = self.__account["first_login"]
@@ -19,7 +18,7 @@ class Account:
             self.fish_cluters = self.__account["fish_cluters"]
             self.fish_friends = self.__account["fish_friends"]
         else:
-            self.user = user
+            self.__user = user
             self.password = password
             self.email = email
             self.first_login = True
@@ -31,8 +30,8 @@ class Account:
 
     def pull(self):
         self.__accounts.pull()
-        self.__account = self.__accounts.content[self.user]
-        self.user = self.__account["user"]
+        self.__account = self.__accounts.content[self.__user]
+        self.__user = self.__account["user"]
         self.password = self.__account["password"]
         self.email = self.__account["email"]
         self.first_login = self.__account["first_login"]
@@ -43,8 +42,8 @@ class Account:
 
     def push(self):
         self.__accounts.pull()
-        self.__accounts.content[self.user] = {
-            "user": self.user,
+        self.__accounts.content[self.__user] = {
+            "user": self.__user,
             "password": self.password,
             "email": self.email,
             "first_login": self.first_login,
@@ -54,3 +53,21 @@ class Account:
             "fish_friends": self.fish_friends,
         }
         self.__accounts.push()
+
+    @property
+    def password(self):
+        return self.__password
+
+    @password.setter
+    def password(self, new_password):
+        if type(new_password) == type(str()):
+            self.__password = new_password
+
+    @property
+    def user(self):
+        return self.__user
+
+    @password.setter
+    def user(self, new_user):
+        if type(new_user) == type(str()):
+            self.__user = new_user

@@ -40,9 +40,6 @@ class CustomTerminal:
     def jumpLine():
         print("")
 
-    def jumpLine():
-        print("")
-
     def reset(self):
         Style.RESET_ALL
 

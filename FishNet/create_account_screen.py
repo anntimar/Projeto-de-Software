@@ -2,11 +2,11 @@ import time
 
 from classs.banner import Banner
 from classs.account import Account
-from classs.postFile import postFile
+from classs.postFile import AccountsFile
 from classs.customTerminal import CustomTerminal as ct
 
 
-accounts = postFile("FishNet/file_data/accountsList.json")
+accounts = AccountsFile()
 
 
 def create_account():
@@ -40,6 +40,7 @@ def create_account():
             ct.negativeMessage("SENHAS DIFERENTES!")
             time.sleep(2)
         else:
+            password = key1
             Banner.create_account()
             ct.positiveMessage("SENHA CONFIRMADA!")
             time.sleep(2)
@@ -51,7 +52,7 @@ def create_account():
     ct.positiveMessage("E-MAIL CONFIRMADO!")
     time.sleep(2)
 
-    Account(userName, key2, userEmail)
+    Account(userName, password, userEmail)
 
     Banner.create_account()
     ct.positiveMessage("CONTA CRIADA COM SUCESSO")

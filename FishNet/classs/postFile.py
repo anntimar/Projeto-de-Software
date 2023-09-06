@@ -20,3 +20,13 @@ class postFile:
             fileContent = json.load(f)
         self.content = fileContent
         return fileContent
+
+
+class AccountsFile(postFile):
+    def __init__(self):
+        super().__init__("FishNet/file_data/accountsList.json")
+
+
+class PostsFile(postFile):
+    def __init__(self):
+        super().__init__("FishNet/file_data/post_list.json")

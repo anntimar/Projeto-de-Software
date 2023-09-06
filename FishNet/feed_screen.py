@@ -1,8 +1,9 @@
+from classs.postFile import PostsFile
 from classs.menu import Menu
 from classs.postFile import postFile
 from classs.customTerminal import CustomTerminal as ct
 
-post_file = postFile("FishNet/file_data/post_list.json")
+post_file = PostsFile()
 
 
 def feed(account, feedlist):

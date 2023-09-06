@@ -54,8 +54,8 @@
         "user": "gabriel",
         "password": "1212",
         "email": "gabriel",
-        "first_login": true,
-        "type_of_fish": 0,
+        "first_login": false,
+        "type_of_fish": 2,
         "posts": [],
         "fish_cluters": [],
         "fish_friends": []
@@ -108,6 +108,26 @@
         "user": "thiagfos",
         "password": "1212",
         "email": "thjasa",
+        "first_login": true,
+        "type_of_fish": 0,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
+    },
+    "itallo": {
+        "user": "itallo",
+        "password": "1212",
+        "email": "ansfansfa",
+        "first_login": false,
+        "type_of_fish": 3,
+        "posts": [],
+        "fish_cluters": [],
+        "fish_friends": []
+    },
+    "jojo": {
+        "user": "jojo",
+        "password": "1212",
+        "email": "jojo@",
         "first_login": true,
         "type_of_fish": 0,
         "posts": [],

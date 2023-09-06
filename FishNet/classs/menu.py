@@ -56,13 +56,13 @@ class Menu:
 
     def edit_account():
         Banner.profile()
-        ct.print("➀", "EDITAR NOME DE USUÁRIO")
-        ct.print("➁", "EDITAR SENHA")
-        ct.print("➂", "EDITAR EMAIL")
-        ct.print("➃", "EXCLUIR CONTA")
-        ct.print("➄", "VOLTAR")
+        ct.print("➀", "VOLTAR")
+        ct.print("➁", "EDITAR NOME DE USUÁRIO")
+        ct.print("➂", "EDITAR SENHA")
+        ct.print("➃", "EDITAR EMAIL")
+        ct.print("➄", "EXCLUIR CONTA")
         ct.jumpLine()
-        return ct.inputStr()
+        return ct.inputInt()
 
     def post():
         Banner.profile()
@@ -118,3 +118,11 @@ class Menu:
         ct.print("➄", " ⮨  VOLTAR     ")
         ct.jumpLine()
         return ct.inputStr()
+
+    def post_create():
+        Banner.profile()
+        post = ct.inputStr("✎", "DIGITE SEU POST")
+        Banner.profile()
+        ct.positiveMessage("POST ENVIADO COM SUCESSO!")
+        time.sleep(2)
+        return post

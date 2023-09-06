@@ -1,5 +1,7 @@
 import time
 import pwinput
+from classs.account import Account
+from classs.banner import Banner
 from accounts_list_actions import *
 from colorama import Fore
 from colorama import Style
@@ -7,71 +9,59 @@ from classs.menu import Menu
 from classs.customTerminal import CustomTerminal as ct
 
 
-def edit_account(perfilUser):
+def edit_account(account):
     while True:
-        action = Menu.edit_account()
-        if action == "1":
-            edit_user_name(perfilUser)
-        elif action == "2":
-            edite_password(perfilUser)
-        elif action == "3":
-            edite_email(perfilUser)
-        elif action == "4":
-            if not delete_account(perfilUser):
-                return False
-        elif action == "5":
-            break
-
+        match Menu.edit_account():
+            case 1:
+                break
+            case 2:
+                edit_user_name(account)
+            case 3:
+                edite_password(account)
+            case 4:
+                edite_email(account)
+            case 5:
+                if not delete_account(account):
+                    return False
     return True
 
 
-def edit_user_name(perfilUser):
-    ct.clean()
+def edit_user_name(account):
     accountsList = pull_accounts_list()
 
     while True:
-        userName = input(
-            f"{Fore.YELLOW} ㋡ {Fore.CYAN} ESCOLHA UM NOVO NOME DE USUÁRIO ▷  {Fore.YELLOW}"
-        )
-        # ---------------------------------------
-        userName = str(userName)
-        userName = userName.lower()
-        userName = userName.replace(" ", "_")
-
-        while "__" in userName:
-            userName = userName.replace("__", "_")
-
-        userName = userName.removesuffix("_")
-        userName = userName.removeprefix("_")
-        # ---------------------------------------
+        Banner.profile()
+        userName = ct.inputUserName("ESCOLHA UM NOVO NOME DE USUÁRIO")
 
         if userName in accountsList:
-            print(f"{Fore.RED} ✖  NOME DE USUÁRIO INDISPONÍVEL{Style.RESET_ALL}")
+            Banner.profile()
+            ct.negativeMessage("NOME DE USUÁRIO INDISPONÍVEL")
             time.sleep(1)
         else:
             break
-    print("")
-    print(
-        f"{Fore.YELLOW} ➥   {Fore.CYAN}SEU NOME DE USUÁRIO É ▷  {Fore.YELLOW}{userName}{Style.RESET_ALL}"
-    )
-    print(f"{Style.RESET_ALL}")
 
-    del accountsList[perfilUser["user"]]
+    ct.jumpLine()
+    ct.print("➥", "SEU NOME DE USUÁRIO É ▷  " + userName)
+    try:
+        del accountsList[account.user]
+    except:
+        ct.negativeMessage("CONTA NÃO APAGADA!")
+        time.sleep(2)
 
-    perfilUser["user"] = userName
+    account.user = userName
 
-    accountsList[userName] = perfilUser
+    accountsList[userName] = account
+
     push_accounts_list(accountsList)
 
     time.sleep(2)
 
     ct.clean()
-    print(f"{Fore.GREEN} ✔  NOME DE USUÁRIO EDITADO COM SUCESSO{Style.RESET_ALL}")
-
+    ct.positiveMessage("NOME DE USUÁRIO EDITADO COM SUCESSO!")
     time.sleep(2)
 
 
-def edite_password(perfilUser):
+def edite_password(account):
     ct.clean()
     accountsList = pull_accounts_list()
     key1 = "/"
@@ -96,7 +86,7 @@ def edite_password(perfilUser):
     userPassword = str(key2)
     userPassword = userPassword.lower()
 
-    accountsList[perfilUser["user"]]["password"] = userPassword
+    accountsList[account["user"]]["password"] = userPassword
     push_accounts_list(accountsList)
 
     ct.clean()
@@ -105,7 +95,7 @@ def edite_password(perfilUser):
     time.sleep(2)
 
 
-def edite_email(perfilUser):
+def edite_email(account):
     ct.clean()
     accountsList = pull_accounts_list()
 
@@ -115,7 +105,7 @@ def edite_email(perfilUser):
     userEmail = str(userEmail)
     userEmail = userEmail.lower()
 
-    accountsList[perfilUser["user"]]["email"] = userEmail
+    accountsList[account["user"]]["email"] = userEmail
     push_accounts_list(accountsList)
 
     ct.clean()
@@ -124,12 +114,12 @@ def edite_email(perfilUser):
     time.sleep(2)
 
 
-def delete_account(perfilUser):
+def delete_account(account):
     while True:
         action = Menu.delete_account()
         if action == "1":
             accountsList = pull_accounts_list()
-            del accountsList[perfilUser["user"]]
+            del accountsList[account["user"]]
             push_accounts_list(accountsList)
             ct.clean()
             print(f"{Fore.GREEN} ✔  CONTA EXCLUIDA COM SUCESSO{Style.RESET_ALL}")

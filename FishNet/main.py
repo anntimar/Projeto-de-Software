@@ -1,8 +1,10 @@
+from classs.account import Account
 from classs.menu import Menu
 from login_screen import login
 from create_account_screen import create_account
 
 while True:
+    Account("thiago")
     match Menu.main():
         case 1:
             break
@@ -10,3 +12,5 @@ while True:
             login()
         case 3:
             create_account()
+
+# polimosfismo
