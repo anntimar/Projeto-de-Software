@@ -26,7 +26,13 @@ class AccountsFile(postFile):
     def __init__(self):
         super().__init__("FishNet/file_data/accountsList.json")
 
+    def len(self):
+        return len(self.content)
+
 
 class PostsFile(postFile):
     def __init__(self):
         super().__init__("FishNet/file_data/post_list.json")
+
+    def len(self):
+        return len(self.content) - 1

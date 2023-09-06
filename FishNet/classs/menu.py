@@ -13,6 +13,7 @@ class Menu:
         ct.print("➀", "SAIR")
         ct.print("➁", "LOGIN")
         ct.print("➂", "CRIAR CONTA")
+        ct.print("➃", "DADOS DO APLICATIVO")
         ct.jumpLine()
         return ct.inputInt()
 
